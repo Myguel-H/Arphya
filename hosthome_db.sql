@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict BC4zcgFmBFMd1DcjZLgSLl8Q3GG8JWKZIghfo8BvZxqkjks18YMKDbVXfeYUaff
+\restrict obwylUOZ0gDe4uP8MB2mzBJS6sridExi2bUcsMl1Ur8srDQEhXekue9bQdU4U2n
 
 -- Dumped from database version 15.18 (Debian 15.18-0+deb12u1)
 -- Dumped by pg_dump version 15.18 (Debian 15.18-0+deb12u1)
@@ -56,40 +56,6 @@ ALTER TABLE public.category_id_seq OWNER TO nygts;
 --
 
 ALTER SEQUENCE public.category_id_seq OWNED BY public.categories.id;
-
-
---
--- Name: creators; Type: TABLE; Schema: public; Owner: nygts
---
-
-CREATE TABLE public.creators (
-    id integer NOT NULL,
-    user_creator character varying(50) NOT NULL
-);
-
-
-ALTER TABLE public.creators OWNER TO nygts;
-
---
--- Name: creator_id_seq; Type: SEQUENCE; Schema: public; Owner: nygts
---
-
-CREATE SEQUENCE public.creator_id_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER TABLE public.creator_id_seq OWNER TO nygts;
-
---
--- Name: creator_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: nygts
---
-
-ALTER SEQUENCE public.creator_id_seq OWNED BY public.creators.id;
 
 
 --
@@ -182,13 +148,6 @@ ALTER TABLE ONLY public.categories ALTER COLUMN id SET DEFAULT nextval('public.c
 
 
 --
--- Name: creators id; Type: DEFAULT; Schema: public; Owner: nygts
---
-
-ALTER TABLE ONLY public.creators ALTER COLUMN id SET DEFAULT nextval('public.creator_id_seq'::regclass);
-
-
---
 -- Name: publications id; Type: DEFAULT; Schema: public; Owner: nygts
 --
 
@@ -222,16 +181,6 @@ COPY public.categories (id, name, creation_date, description) FROM stdin;
 36	Sistemas Operacionais	2026-06-27 02:52:02.773319	Windows, macOS, Linux, Unix, gerenciamento de processos, memória e arquivos.
 37	Hardware	2026-06-27 02:52:02.773319	Componentes físicos, montagem de computadores, manutenção, overclock e infraestrutura.
 38	Open Source	2026-06-27 02:52:02.773319	Projetos open source, comunidades, contribuições e filosofia do código aberto.
-41	kokoko	2026-06-27 04:33:03.313708	kokoko
-\.
-
-
---
--- Data for Name: creators; Type: TABLE DATA; Schema: public; Owner: nygts
---
-
-COPY public.creators (id, user_creator) FROM stdin;
-4	myguel
 \.
 
 
@@ -240,16 +189,6 @@ COPY public.creators (id, user_creator) FROM stdin;
 --
 
 COPY public.publications (id, title, resume, about, user_id, category_id, creation_date, content) FROM stdin;
-21	Bacharelado em Sistemas de Informação: Formação para a Transformação Digital	O Bacharelado em Sistemas de Informação é um curso superior voltado para a formação de profissionais capazes de desenvolver, gerenciar e aplicar soluções tecnológicas nas organizações. A graduação combina conhecimentos de tecnologia, gestão e negócio	O curso de Bacharelado em Sistemas de Informação tem como objetivo capacitar profissionais para analisar, projetar, desenvolver e administrar sistemas computacionais que auxiliem empresas e instituições em seus processos. Durante a formação, os aluno	4	1	2026-06-03 00:52:04.91696	O Bacharelado em Sistemas de Informação é uma das principais graduações da área de tecnologia da informação. Seu foco está na utilização da tecnologia para resolver problemas organizacionais, melhorar processos e apoiar a tomada de decisões nas empresas. Diferentemente de outros cursos da área, Sistemas de Informação possui uma forte integração entre conhecimentos técnicos e de gestão, permitindo que o profissional compreenda tanto os aspectos tecnológicos quanto as necessidades do negócio.\r\n\r\nAo longo do curso, os estudantes desenvolvem habilidades em programação, modelagem de sistemas, administração de bancos de dados, redes de computadores, segurança da informação e desenvolvimento de software. Além disso, disciplinas relacionadas à administração, empreendedorismo e gestão de projetos contribuem para uma visão ampla sobre o papel da tecnologia nas organizações.\r\n\r\nO mercado de trabalho para o bacharel em Sistemas de Informação é amplo e está em constante crescimento. Os profissionais podem atuar como analistas de sistemas, desenvolvedores de software, administradores de banco de dados, gestores de tecnologia, consultores de TI, analistas de segurança da informação e em diversas outras funções. Com a crescente transformação digital das empresas, a demanda por especialistas qualificados continua aumentando.
-24	kokokoko	kkokkokk	okokkok	18	17	2026-06-26 01:10:52.687084	kokokokok
-25	kokokokok	kokkokok	okokokok	20	17	2026-06-26 01:35:31.118786	ookkkok
-26	lokoko	kkokko	kkokok	20	20	2026-06-26 01:48:00.424571	okokkok
-30	Os Melhores Softwares Livres para Windows	Lista completa de softwares open source para substituir programas pagos no Windows.	Neste artigo, vamos explorar alternativas livres para softwares populares como Photoshop, Office, AutoCAD e muito mais.	20	8	2026-06-27 04:17:23.581998	Conheça o GIMP (alternativa ao Photoshop), LibreOffice (alternativa ao Microsoft Office), Inkscape (alternativa ao CorelDRAW), VLC (reprodutor de mídia), Audacity (edição de áudio), e muitos outros. Todos esses softwares são gratuitos, open source e têm qualidade profissional!
-31	Os Melhores Softwares Livres para Windows	Lista completa de softwares open source para substituir programas pagos no Windows.	Neste artigo, vamos explorar alternativas livres para softwares populares como Photoshop, Office, AutoCAD e muito mais.	20	8	2026-06-27 04:18:05.188098	Conheça o GIMP (alternativa ao Photoshop), LibreOffice (alternativa ao Microsoft Office), Inkscape (alternativa ao CorelDRAW), VLC (reprodutor de mídia), Audacity (edição de áudio), e muitos outros. Todos esses softwares são gratuitos, open source e têm qualidade profissional!
-32	kokok	okokko	kokokok	20	33	2026-06-27 04:18:31.102449	kokokok
-33	Os Melhores Softwares Livres para Windows	Lista completa de softwares open source para substituir programas pagos no Windows.	Neste artigo, vamos explorar alternativas livres para softwares populares como Photoshop, Office, AutoCAD e muito mais.	20	8	2026-06-27 04:18:46.283808	Conheça o GIMP (alternativa ao Photoshop), LibreOffice (alternativa ao Microsoft Office), Inkscape (alternativa ao CorelDRAW), VLC (reprodutor de mídia), Audacity (edição de áudio), e muitos outros. Todos esses softwares são gratuitos, open source e têm qualidade profissional!
-34	Os Melhores Softwares Livres para Windows	Lista completa de softwares open source para substituir programas pagos no Windows.	Neste artigo, vamos explorar alternativas livres para softwares populares como Photoshop, Office, AutoCAD e muito mais.	20	8	2026-06-27 04:19:33.447464	Conheça o GIMP (alternativa ao Photoshop), LibreOffice (alternativa ao Microsoft Office), Inkscape (alternativa ao CorelDRAW), VLC (reprodutor de mídia), Audacity (edição de áudio), e muitos outros. Todos esses softwares são gratuitos, open source e têm qualidade profissional!
-35	Os Melhores Softwares Livres para Windows	Lista completa de softwares open source para substituir programas pagos no Windows.	Neste artigo, vamos explorar alternativas livres para softwares populares como Photoshop, Office, AutoCAD e muito mais.	20	35	2026-06-27 04:19:59.120542	Conheça o GIMP (alternativa ao Photoshop), LibreOffice (alternativa ao Microsoft Office), Inkscape (alternativa ao CorelDRAW), VLC (reprodutor de mídia), Audacity (edição de áudio), e muitos outros. Todos esses softwares são gratuitos, open source e têm qualidade profissional!
 \.
 
 
@@ -267,21 +206,14 @@ COPY public.users (id, name, age, sex, phone, email, avatar, data_cadastro, pass
 -- Name: category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nygts
 --
 
-SELECT pg_catalog.setval('public.category_id_seq', 41, true);
-
-
---
--- Name: creator_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nygts
---
-
-SELECT pg_catalog.setval('public.creator_id_seq', 4, true);
+SELECT pg_catalog.setval('public.category_id_seq', 42, true);
 
 
 --
 -- Name: publication_id_seq; Type: SEQUENCE SET; Schema: public; Owner: nygts
 --
 
-SELECT pg_catalog.setval('public.publication_id_seq', 35, true);
+SELECT pg_catalog.setval('public.publication_id_seq', 1, false);
 
 
 --
@@ -297,14 +229,6 @@ SELECT pg_catalog.setval('public.users_id_seq', 13, true);
 
 ALTER TABLE ONLY public.categories
     ADD CONSTRAINT category_pkey PRIMARY KEY (id);
-
-
---
--- Name: creators creator_pkey; Type: CONSTRAINT; Schema: public; Owner: nygts
---
-
-ALTER TABLE ONLY public.creators
-    ADD CONSTRAINT creator_pkey PRIMARY KEY (id);
 
 
 --
@@ -327,5 +251,5 @@ ALTER TABLE ONLY public.users
 -- PostgreSQL database dump complete
 --
 
-\unrestrict BC4zcgFmBFMd1DcjZLgSLl8Q3GG8JWKZIghfo8BvZxqkjks18YMKDbVXfeYUaff
+\unrestrict obwylUOZ0gDe4uP8MB2mzBJS6sridExi2bUcsMl1Ur8srDQEhXekue9bQdU4U2n
 
