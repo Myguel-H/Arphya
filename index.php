@@ -14,7 +14,7 @@ if ($user_id > 0) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HostHome - Myguel</title>
+  <title>HostHome - Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,7 +26,7 @@ if ($user_id > 0) {
     <div class="logo-name">
       <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
       <a href="/">
-        <h2>HostHome</h2>
+        <h2>HostHome - <strong style="color: #dd1e1e; text-decoration: none">Fase Beta, ainda em teste!</strong></h2>
       </a>
     </div>
 
@@ -128,9 +128,9 @@ if ($user_id > 0) {
           pelo GNU/Linux.
         </p>
 
-        <p>O que é GNU/Linux ? <a href="/linux">clique aqui</a></p>
-        <p>Historia do GNU/Linux ? <a href="/linux">clique aqui</a></p>
-        <p>Porque GNU/Linux ? <a href="/linux">clique aqui</a></p>
+        <p>O que é GNU/Linux ? <a href="https://www.vivaolinux.com.br/linux/">clique aqui</a></p>
+        <p>Historia do GNU/Linux ? <a href="https://www.vivaolinux.com.br/artigo/Historia-do-GNU-Linux-1965-assim-tudo-comecou/">clique aqui</a></p>
+        <p>Porque GNU/Linux ? <a href="https://www.vivaolinux.com.br/artigo/GNU-Linux-Depois-dele-o-mundo-nao-e-mais-o-mesmo/">clique aqui</a></p>
 
       </div>
     </div>
