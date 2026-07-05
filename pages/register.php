@@ -40,6 +40,7 @@
             </form>
         </div>
         <p class="link-account">Ja possui conta ? <a href="/pages/login.php">Logue-se aqui</a></p>
+        <p class="link-account"><a href="/">Voltar à página principal</a></p>
     </div>
 </body>
 

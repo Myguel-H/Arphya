@@ -43,6 +43,7 @@
 
         </div>
         <p class="link-account">Não possui conta ? <a href="/pages/register.php">Cadastre-se aqui</a></p>
+        <p class="link-account"><a href="/">Voltar à página principal</a></p>
     </div>
 </body>
 
