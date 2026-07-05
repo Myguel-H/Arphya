@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //veio metodo POST de outro arquivo 
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_email'] = $user['email'];
 
-            if($user['type'] === 'admin') {
+            if ($user['type'] === 'admin') {
                 $_SESSION['admin'] = true;
             } else {
                 $_SESSION['admin'] = false;
@@ -32,14 +32,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //veio metodo POST de outro arquivo 
             header('Location: /pages/login.php?error=1'); //dads incorretos, permanecem no login e na url retorna erro
             exit();
         }
-    } 
+    }
 
-    if ($action == 'register') { //Ação para registro de usuario 
+    if ($action == 'register') {
         $name = $_POST['name'] ?? '';
         $email = $_POST['email'] ?? '';
         $password = $_POST['password'] ?? '';
 
         $hashPassword = password_hash($password, PASSWORD_DEFAULT); //criptografa a senha do usuario
+
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        $row = $stmt->fetch(PDO::FETCH_NUM);
+
+        if ($row[0] > 0) {
+            header('Location: /pages/register.php?error=email-ja-cadastrado');
+            exit();
+        }
 
         try {
             $stmt = $pdo->prepare('INSERT INTO users (name, email, password) VALUES (?, ?, ?)');
