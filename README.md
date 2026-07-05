@@ -61,7 +61,6 @@ GRANT ALL PRIVILEGES ON DATABASE #nome_do_seu_banco TO #nome_do_usuario;
 <?php
 $host = '#localhost';
 $dbname = '#nomedoseubanco';
-debian@arphya:~$ ssh uarphya@192.168.3.73
 $user = '#nome do usuário '(não esqueça que ele deve ser dono ou ter acesso para alterar o banco); 
 $password = 'senha do usuario do banco';
 
