@@ -1,5 +1,7 @@
 # HostHome 🏠
 
+Acesso para o projeto arphya: http://www.arphya.com.br
+
 Uma plataforma web para compartilhar conhecimento sobre **GNU/Linux** e **Software Livre**. Permite que usuários criem, compartilhem e gerenciem conteúdo educativo em um ambiente colaborativo.
 
 ---
@@ -49,25 +51,19 @@ psql -U postgres
 ```
 
 ```sql
-CREATE DATABASE hosthome_db;
-CREATE USER nygts WITH PASSWORD 'admin';
-GRANT ALL PRIVILEGES ON DATABASE hosthome_db TO nygts;
+CREATE DATABASE #nome_do_seu_banco;
+CREATE USER #seu_usuario WITH PASSWORD '#sua_senha';
+GRANT ALL PRIVILEGES ON DATABASE #nome_do_seu_banco TO #nome_do_usuario;
 ```
-
-#### Importar Schema
-
-```bash
-psql -U nygts -d hosthome_db -f banco.db
-```
-
 #### Configurar `config.php`
 
 ```php
 <?php
-$host = 'localhost';
-$dbname = 'hosthome_db';
-$user = 'nygts';
-$password = 'admin';
+$host = '#localhost';
+$dbname = '#nomedoseubanco';
+debian@arphya:~$ ssh uarphya@192.168.3.73
+$user = '#nome do usuário '(não esqueça que ele deve ser dono ou ter acesso para alterar o banco); 
+$password = 'senha do usuario do banco';
 
 try {
     $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
@@ -84,7 +80,7 @@ try {
 
 ```
 hosthome/
-├── admin/                    # Painel administrativo
+├── admin/                    # Painel administrativo - apenas o usuario que possui admin tem acesso/visualiza
 │   ├── conf_categories.php   # Gerenciar categorias
 │   ├── conf_publications.php # Gerenciar publicações
 │   └── conf_users.php        # Gerenciar usuários
@@ -99,10 +95,7 @@ hosthome/
 │   ├── register.php          # Registro
 │   └── timeline.php          # Timeline pública
 ├── static/                   # Imagens e ícones
-├── api-notice.php            # Integração de notícias
 ├── auth.php                  # Autenticação e sessão
-├── banco.db                  # Dump do banco de dados
-├── config.php                # Configuração BD
 ├── create_post.php           # Criar publicação
 ├── create_category.php       # Criar categoria
 ├── delete_post.php           # Deletar publicação
@@ -170,9 +163,9 @@ CREATE TABLE categories (
 - **PHP 7.4+** - Lógica 100% desenvolvida manualmente
   - 📚 Documentação oficial PHP
   - 🔍 Stack Overflow
-  - 💬 Reddit (r/PHP, r/learnprogramming)
+  - 💬 Reddit
   - 👥 Comunidade de programação
-  - 📖 Boas práticas e padrões de design
+  - 📖 Boas práticas e padrões de design - eu acho
 
 ### Database 
 - **PostgreSQL 15+**
@@ -204,4 +197,4 @@ CREATE TABLE categories (
 
 ## 📝 Licença
 
-GNU General Public License v3.0
+GNU General Public License - GPL
