@@ -1,6 +1,7 @@
 <?php
 require_once '../config.php';
 session_start();
+$user_id = $_SESSION['user_id'] ?? 0;
 $isAdmin = !empty($_SESSION['admin']);
 
 ?>
@@ -45,6 +46,19 @@ $isAdmin = !empty($_SESSION['admin']);
                     <img src="/static/person-icon.png" alt="icon-login">
                 </a>
             </button>
+            <?php
+            if ($user_id > 0) {
+                $stmt = $pdo->prepare("SELECT name FROM users WHERE id = ?");
+                $stmt->execute([$user_id]);
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                if ($user) {
+                    ?>
+                    <p><strong style="color: #dd1e1e;"><?= htmlspecialchars($user['name']) ?></strong></p>
+                    <?php
+                }
+            }
+            ?>
         </div>
     </header>
 

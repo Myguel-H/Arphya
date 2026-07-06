@@ -1,4 +1,5 @@
 <?php
+require_once 'config.php';
 session_start();
 $user_id = $_SESSION['user_id'] ?? 0;
 
@@ -41,13 +42,29 @@ if ($user_id > 0) {
         </ul>
       </nav>
 
-      <!--Icone de person-->
-      <div class="person-icon"></div>
-      <button class="btn-login" id="menu">
-        <a href="<?= $profile ?>">
-          <img src="/static/person-icon.png" alt="icon-login">
-        </a>
-      </button>
+      <div class="user-info">
+        <!--Icone de person-->
+        <div class="person-icon"></div>
+        <button class="btn-login" id="menu">
+          <a href="<?= $profile ?>">
+            <img src="/static/person-icon.png" alt="icon-login">
+          </a>
+        </button>
+
+        <?php
+        if ($user_id > 0) {
+          $stmt = $pdo->prepare("SELECT name FROM users WHERE id = ?");
+          $stmt->execute([$user_id]);
+          $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+          if ($user) {
+            ?>
+            <p><?= htmlspecialchars($user['name']) ?></p>
+            <?php
+          }
+        }
+        ?>
+      </div>
 
       <!--Input de busca-->
       <div class="search-container">
