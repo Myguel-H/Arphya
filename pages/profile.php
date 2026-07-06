@@ -38,13 +38,28 @@ $isAdmin = !empty($_SESSION['admin']);
                 </ul>
             </nav>
 
-            <!--Icone de person-->
-            <div class="person-icon"></div>
-            <button class="btn-login" id="menu">
-                <a href="/pages/login.php">
-                    <img src="/static/person-icon.png" alt="icon-login">
-                </a>
-            </button>
+            <div class="user-info">
+                <!--Icone de person-->
+                <div class="person-icon"></div>
+                <button class="btn-login" id="menu">
+                    <a href="/pages/login.php">
+                        <img src="/static/person-icon.png" alt="icon-login">
+                    </a>
+                </button>
+                <?php
+                if ($user_id > 0) {
+                    $stmt = $pdo->prepare("SELECT name FROM users WHERE id = ?");
+                    $stmt->execute([$user_id]);
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    if ($user) {
+                        ?>
+                        <p><?= htmlspecialchars($user['name']) ?></p>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
         </div>
     </header>
 
@@ -85,31 +100,54 @@ $isAdmin = !empty($_SESSION['admin']);
                 if ($user) {
                     ?>
 
-            <button> <a href="/pages/edit_user.php">Editar</a> </button>
-
-            <img class="img-user" src="../static/img_person/admin.jpeg" alt="avatar">
-
+            <img class="img-user"
+                src="<?= $user['avatar'] ? '/uploads/avatars/' . htmlspecialchars($user['avatar']) : '/static/person-icon.png' ?>"
+                alt="avatar">
 
             <p><strong>Nome:</strong>
-                <?= htmlspecialchars($user['name']) ?>
+                <span><?= htmlspecialchars($user['name']) ?></span>
+                <a class="edit-field" href="/pages/edit_user.php?field=name" title="Editar nome">
+                    <img src="../static/edit-button.png" alt="editar">
+                </a>
             </p>
             <p><strong>Email:</strong>
-                <?= htmlspecialchars($user['email']) ?>
+                <span><?= htmlspecialchars($user['email']) ?></span>
+                <a class="edit-field" href="/pages/edit_user.php?field=email" title="Editar email">
+                    <img src="../static/edit-button.png" alt="editar">
+                </a>
             </p>
             <p><strong>Idade:</strong>
-                <?= htmlspecialchars($user['age'] ?? 'dado não encontrado') ?>
+                <span><?= htmlspecialchars($user['age'] ?? 'dado não encontrado') ?></span>
+                <a class="edit-field" href="/pages/edit_user.php?field=age" title="Editar idade">
+                    <img src="../static/edit-button.png" alt="editar">
+                </a>
             </p>
             <p><strong>Sexo:</strong>
-                <?= htmlspecialchars($user['sex'] ?? 'dado não encontrado') ?>
+                <span><?= htmlspecialchars($user['sex'] ?? 'dado não encontrado') ?></span>
+                <a class="edit-field" href="/pages/edit_user.php?field=sex" title="Editar sexo">
+                    <img src="../static/edit-button.png" alt="editar">
+                </a>
             </p>
             <p><strong>Telefone:</strong>
-                <?= htmlspecialchars($user['phone'] ?? 'dado não encontrado') ?>
-            </p>
-            <p><strong>Cadastro:</strong>
-                <?= date('d/m/Y', strtotime($user['data_cadastro'])) ?>
+                <span><?= htmlspecialchars($user['phone'] ?? 'dado não encontrado') ?></span>
+                <a class="edit-field" href="/pages/edit_user.php?field=phone" title="Editar telefone">
+                    <img src="../static/edit-button.png" alt="editar">
+                </a>
             </p>
             <p><strong>Tipo:</strong>
-                <?= htmlspecialchars($user['type']) ?>
+                <span><?= htmlspecialchars($user['type']) ?></span>
+                <a class="edit-field" href="/pages/edit_user.php?field=type" title="Editar tipo">
+                    <img src="../static/edit-button.png" alt="editar">
+                </a>
+            </p>
+            <p><strong>Img:</strong>
+                <span><?= htmlspecialchars($user['avatar'] ?? 'Sem foto') ?></span>
+                <a class="edit-field" href="/pages/edit_user.php?field=avatar" title="Editar imagem">
+                    <img src="../static/edit-button.png" alt="editar">
+                </a>
+            </p>
+            <p><strong>Cadastro:</strong>
+                <span><?= date('d/m/Y', strtotime($user['data_cadastro'])) ?></span>
             </p>
 
             <?php } else {

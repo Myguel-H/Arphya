@@ -1,5 +1,7 @@
 <?php
+require_once '../config.php';
 session_start();
+$user_id = $_SESSION['user_id'] ?? 0;
 $isAdmin = !empty($_SESSION['admin']);
 ?>
 
@@ -36,13 +38,28 @@ $isAdmin = !empty($_SESSION['admin']);
                 </ul>
             </nav>
 
-            <!--Icone de person-->
-            <div class="person-icon"></div>
-            <button class="btn-login" id="menu">
-                <a href="/pages/profile.php">
-                    <img src="/static/person-icon.png" alt="icon-login">
-                </a>
-            </button>
+            <div class="user-info">
+                <!--Icone de person-->
+                <div class="person-icon"></div>
+                <button class="btn-login" id="menu">
+                    <a href="/pages/profile.php">
+                        <img src="/static/person-icon.png" alt="icon-login">
+                    </a>
+                </button>
+                <?php
+                if ($user_id > 0) {
+                    $stmt = $pdo->prepare("SELECT name FROM users WHERE id = ?");
+                    $stmt->execute([$user_id]);
+                    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    if ($user) {
+                        ?>
+                        <p><?= htmlspecialchars($user['name']) ?></p>
+                        <?php
+                    }
+                }
+                ?>
+            </div>
         </div>
     </header>
     <!------------------------- B    O    D    Y --------------------------->
@@ -127,8 +144,12 @@ $isAdmin = !empty($_SESSION['admin']);
             ?>
         </div>
         <?php
-        } else {
-            echo "<p>Nenhuma publicação encontrada</p></div>";
+        } elseif ($user_id > 0) {
+            
+            echo "<p>Nada foi publicado ainda ! Seja o primeiro a publicar, <a href='/pages/add_publication.php'>Clique aqui</a>.</p>";
+        }  else {
+            
+            echo "<p>Nada foi publicado ainda ! Seja o primeiro a publicar, <a href='/pages/login.php'>Clique aqui</a>.</p>";
         }
         ?>
 

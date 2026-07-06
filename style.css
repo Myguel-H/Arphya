@@ -71,6 +71,9 @@ header {
 .header-actions nav {
     margin-right: 0;
 }
+.person-icon {
+border-left: 1px solid #e0e0e0;
+}
 
 .btn-login {
     background: none;
@@ -124,6 +127,22 @@ header {
     transform: scale(1.05);
 }
 
+/* user info wrapper to separate profile from the rest of the header */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 16px;
+    margin-left: 12px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.user-info p {
+    margin: 0;
+    color: #222;
+    font-weight: 500;
+}
+
 .menu-body {
     display: flex;
     align-items: flex-start;
@@ -142,7 +161,6 @@ header {
     gap: 10px;
     margin-left: auto;
     padding-left: 18px;
-    border-left: 1px solid #e0e0e0;
 }
 
 .search-input {
@@ -517,6 +535,36 @@ header {
     width: 18px;
     height: 18px;
     object-fit: contain;
+}
+
+.edit-field {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    border: 1px solid #e6e6e6;
+    transition: all 0.2s ease;
+}
+
+.edit-field:hover {
+    background-color: #fff1f3;
+    border-color: #ff6b6b;
+    transform: translateX(3px);
+}
+
+.edit-field img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.data-user p span {
+    color: #4f4f4f;
+    word-break: break-word;
 }
 
 /* EDIT PROFILE BUTTON */
@@ -1176,6 +1224,7 @@ header {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     padding: 20px;
     font-family: 'Inter', sans-serif;
+    animation: fadeIn 0.5s ease-out 0.2s both;
 }
 
 .account-box {
