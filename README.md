@@ -166,3 +166,14 @@ try {
 - Você pode iniciar o servidor de desenvolvimento local com `php -S localhost:2002` ou outra porta livre.
 - Execute os comandos no terminal a partir da pasta raiz do projeto após clonar o repositório.
 - As rotas principais e a organização de pastas estão listadas acima para facilitar a navegação.
+
+## Sobre o criador
+
+**Myguel Henryque**
+
+- Localização: Paraná, Brasil
+- E-mail: Myguelhenry05@gmail.com
+- LinkedIn: https://www.linkedin.com/in/myguel-henryque-1160b72a1
+- Currículo Lattes: http://lattes.cnpq.br/3171242305410582
+- Site pessoal: https://arphya.com.br
+    
