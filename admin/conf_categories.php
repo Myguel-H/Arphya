@@ -12,7 +12,7 @@ $isAdmin = !empty($_SESSION['admin']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conf-Categories - Hosthome</title>
+    <title>Conf-Categories - Arphya</title>
     <link class="logo-title" rel="icon" href="../static/logohosthome.webp" type="img-icon">
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -25,7 +25,7 @@ $isAdmin = !empty($_SESSION['admin']);
         <div class="logo-name">
             <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
             <a href="/">
-                <h2>HostHome - <strong style="color: #dd1e1e; text-decoration: none;">Administrador</strong></h2>
+                <h2><strong>Arphya</strong> - <strong style="color: #dd1e1e; text-decoration: none;">Administrador</strong></h2>
             </a>
         </div>
 
