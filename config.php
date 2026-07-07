@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'hosthome_db';
+$dbname = 'arphya_db';
 $user = 'nygts';
 $password = 'admin';
 

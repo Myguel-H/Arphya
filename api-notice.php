@@ -1,5 +1,6 @@
 <?php
-$apikey = "2f3f43f2dec78acf404c40487b93ba00";
+#doc do gnews- https://docs.gnews.io/
+$apikey = "d374c38e355ade70fe176b9f0e368d7d";
 $category = "technology";
 $state = "paraná";
 #Não enconste nesse link !
