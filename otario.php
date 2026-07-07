@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso Restrito - Hosthome</title>
+    <title>Acesso Restrito - Arphya</title>
     <link class="logo-title" rel="icon" href="/static/logohosthome.webp" type="img-icon">
     <link rel="stylesheet" href="/style.css">
 </head>
@@ -17,7 +17,7 @@
         <div class="logo-name">
             <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
             <a href="/">
-                <h2>HostHome</h2>
+                <h2><strong>Arphya</strong></h2>
             </a>
         </div>
     </header>

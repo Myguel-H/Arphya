@@ -15,7 +15,7 @@ if ($user_id > 0) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HostHome - Home</title>
+  <title>Arphya - Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,7 +27,7 @@ if ($user_id > 0) {
     <div class="logo-name">
       <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
       <a href="/">
-        <h2>HostHome - <strong style="color: #dd1e1e; text-decoration: none">Fase Beta, ainda em teste!</strong></h2>
+        <h2><strong>Arphya</strong> - <strong style="color: #dd1e1e; text-decoration: none">Fase Beta, ainda em teste!</strong></h2>
       </a>
     </div>
 
