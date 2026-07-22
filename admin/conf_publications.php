@@ -159,6 +159,5 @@ $isAdmin = !empty($_SESSION['admin']);
             <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
         </p>
     </div>
-    </div>
 
 </body>

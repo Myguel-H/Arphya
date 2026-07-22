@@ -1,6 +1,8 @@
-#Arquivos
+# Arquivos de configuração e notas (linhas com # no início continuam sendo comentários)
 api-notice.php
 config.php
 mind.txt
-#pastas
+
+# Pastas e arquivos de banco de dados
 database/att_db.txt
+uploads/

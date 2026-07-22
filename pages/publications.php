@@ -12,7 +12,7 @@ $isAdmin = !empty($_SESSION['admin']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicações - Arphya</title>
-    <link class="logo-title" rel="icon" href="../static/logohosthome.webp" type="img-icon">
+    <link  rel="icon" href="../static/logohosthome.webp" type="img-icon">
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -21,11 +21,10 @@ $isAdmin = !empty($_SESSION['admin']);
     <!--------------------------- H    E    A    D    E    R --------------------------->
     <!--Logo e Nome-->
     <header>
-        <div class="logo-name">
-            <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
-            <a href="/">
-                <h2><strong>Arphya</strong></h2>
-            </a>
+        <div class="logo-name-pages">
+      <a href="/">
+        <img src="/static/arphya_name_logowhite.png" alt="Arphya">
+      </a>
         </div>
 
         <div class="header-actions">
@@ -159,7 +158,6 @@ $isAdmin = !empty($_SESSION['admin']);
         <p>
             <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
         </p>
-    </div>
     </div>
 
 </body>
