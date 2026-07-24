@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict v3EszcEV5Y403ebbOnRx6IawkIUbYaJvSgnB1BnNMeWYGUV6YJx1Na90ONGq0GQ
+\restrict G6XIrcpX22QmQyLXhhPr6qfvhyONPaaoCpp1WHM0MiFHdpTzZhlyjCKr6cwsYju
 
 -- Dumped from database version 15.18 (Debian 15.18-0+deb12u1)
 -- Dumped by pg_dump version 15.18 (Debian 15.18-0+deb12u1)
@@ -112,7 +112,9 @@ CREATE TABLE public.users (
     avatar character varying(255),
     data_cadastro timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     password character varying(255) NOT NULL,
-    type character varying(20) DEFAULT 'comum'::character varying
+    type character varying(20) DEFAULT 'comum'::character varying,
+    about character varying(500),
+    CONSTRAINT chk_sex CHECK (((sex)::text = ANY ((ARRAY['Masculino'::character varying, 'Feminino'::character varying])::text[])))
 );
 
 
@@ -189,5 +191,5 @@ ALTER TABLE ONLY public.users
 -- PostgreSQL database dump complete
 --
 
-\unrestrict v3EszcEV5Y403ebbOnRx6IawkIUbYaJvSgnB1BnNMeWYGUV6YJx1Na90ONGq0GQ
+\unrestrict G6XIrcpX22QmQyLXhhPr6qfvhyONPaaoCpp1WHM0MiFHdpTzZhlyjCKr6cwsYju
 

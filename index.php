@@ -16,6 +16,7 @@ if ($user_id > 0) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arphya - Home</title>
+  <link class="logo-title" rel="icon" href="../static/logohosthome.webp" type="img-icon">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -181,9 +182,10 @@ if ($user_id > 0) {
 
 </body>
 
-  <div class="footer-container">
-    <p>
-      <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
-    </p>
-  </div>
+<div class="footer-container">
+  <p>
+    <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
+  </p>
+</div>
+
 </html>

@@ -123,7 +123,7 @@ border-left: 1px solid #e0e0e0;
 
 /* efeito hover para a lista do menu -header */
 .menu li a:hover {
-    color: #ff6b6b;
+    color: #2563eb;
 }
 
 /* botão do ícone de usuário */
@@ -305,111 +305,227 @@ border-left: 1px solid #e0e0e0;
     flex: 1;
 }
 
-/* ======================== PROFILE SIDEBAR ======================== */
+/* ======================== SIDEBAR LATERAL — ESTILO DASHBOARD (referência) ======================== */
+:root {
+    --sidebar-accent: #6c4ef5;
+    --sidebar-accent-bg: #f1edfe;
+    --sidebar-bg: #ffffff;
+    --sidebar-text: #4a4a4a;
+    --sidebar-text-muted: #9a9a9a;
+    --sidebar-hover-bg: #f5f5f7;
+}
+
 .sidebar-lateral {
     width: 100%;
     max-width: 320px;
-    background-color: #ffffff;
-    border: 1px solid #e6e6e6;
+    background-color: var(--sidebar-bg);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 28px;
-    padding: 26px 22px;
-    margin: 32px 2vw;
-    box-shadow: 0 24px 60px rgba(15, 15, 15, 0.08);
+    padding: 24px 18px;
+    margin: 0;
+    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.08);
     position: relative;
-    top: auto;
     align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 @media (min-width: 1100px) {
     .sidebar-lateral {
-        float: left;
-        width: 320px;
-        max-width: 320px;
-        margin: 32px 24px 32px 2vw;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 280px;
+        max-width: 280px;
+        height: calc(100vh - 90px);
+        margin: 0;
+        padding: 26px 18px;
+        border-radius: 0 0 24px 0;
+        box-shadow: 0 32px 88px rgba(15, 23, 42, 0.08);
+        border-right: 1px solid #ececec;
+        background-color: #fcfdff;
+        overflow-y: auto;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .sidebar-lateral::before {
+        display: none;
+    }
+}
+
+/* ======================== NAV / LISTA DE ITENS ======================== */
+
+.sidebar-actions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar-actions li {
+    margin: 0;
+    list-style: none;
+}
+
+.sidebar-actions h3 {
+    text-align: left;
+    margin: 0;
+    padding: 16px 14px 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--sidebar-text-muted);
+}
+
+.sidebar-actions li:first-child h3,
+ h3:first-child {
+    padding-top: 4px;
+}
+
+.sidebar-actions li + h3 {
+    margin-top: 14px;
+}
+
+.sidebar-actions li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 12px 16px;
+    margin: 0;
+    border-radius: 18px;
+    color: var(--sidebar-text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background-color: #f8f9fb;
+    border: 1px solid transparent;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.03);
+    transition: all 0.2s ease;
+}
+
+.sidebar-actions li a img,
+.sidebar-actions li a svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-actions li a:hover {
+    background-color: #eef4ff;
+    color: #111111;
+    transform: translateX(2px);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.sidebar-actions li a:hover img,
+.sidebar-actions li a:hover svg {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+.sidebar-actions li a.active,
+.sidebar-actions li a.active:hover {
+    background-color: #e7f0ff;
+    color: var(--sidebar-accent);
+    font-weight: 600;
+    border-color: rgba(37, 99, 235, 0.14);
+}
+
+.sidebar-actions li a.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 4px;
+    height: 80%;
+    background-color: var(--sidebar-accent);
+    border-radius: 999px;
+}
+
+.sidebar-actions li a.active img,
+.sidebar-actions li a.active svg {
+    opacity: 1;
+}
+
+.sidebar-actions li a .badge {
+    margin-left: auto;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--sidebar-text-muted);
+}
+
+.sidebar-actions li a.active .badge {
+    color: var(--sidebar-accent);
+}
+
+.sidebar-footer-card {
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 12px;
+    background-color: #fafafa;
+    border: 1px solid #eeeeee;
+    font-family: 'Inter', sans-serif;
+}
+
+.sidebar-footer-card .footer-title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.sidebar-footer-card .footer-bar {
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #e6e6e6;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.sidebar-footer-card .footer-bar-fill {
+    height: 100%;
+    width: 60%;
+    background-color: var(--sidebar-accent);
+}
+
+.sidebar-footer-card .footer-note {
+    font-size: 0.75rem;
+    color: var(--sidebar-text-muted);
+}
+
+/* Ajusta o conteúdo ao lado da sidebar para a nova largura (260px) */
+@media (min-width: 1100px) {
+    .sidebar-lateral + .add-publication,
+    .sidebar-lateral + .profile-user,
+    .sidebar-lateral + .tables,
+    .sidebar-lateral + .user-list,
+    .sidebar-lateral + .publication-list,
+    .sidebar-lateral + .categories-list {
+        margin-left: calc(260px + 2rem);
+        max-width: calc(100% - (260px + 2rem));
     }
 
     .user-list,
     .publication-list,
     .admin-categories-table {
-        float: none;
-        width: calc(100% - 384px);
-        max-width: calc(100% - 384px);
-        margin: 40px 0 40px 364px;
+        margin: 40px 0 40px calc(260px + 2rem);
     }
 }
-
-@media (max-width: 1100px) {
-    .sidebar-lateral {
-        float: none;
-        width: 100%;
-        margin-right: 0;
-    }
-
-    .user-list,
-    .publication-list {
-        margin-left: 0;
-        width: min(100%, 1180px);
-    }
-}
-
-.sidebar-actions {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    font-family: 'Inter', sans-serif;
-}
-
-.sidebar-actions h3 {
-    text-align: center;
-    margin: 0;
-    padding-bottom: 10px;
-    font-size: 0.92rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #2b2b2b;
-}
-
-.sidebar-actions h3:nth-child(1) {
-    border-bottom: 4px solid transparent;
-    border-image: linear-gradient(to right, #C60B4F, #8B0D57, #5D0A62, #550A5F) 1;
-}
-
-.sidebar-actions li a {
-    display: block;
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 18px;
-    color: #4f4f4f;
-    text-decoration: none;
-    font-size: 0.97rem;
-    font-weight: 500;
-    background-color: #fafafa;
-    transition: background-color 0.25s ease, transform 0.2s ease, color 0.2s ease;
-}
-
-.sidebar-actions li a:hover {
-    background-color: #fff2f0;
-    color: #e64343;
-    transform: translateX(3px);
-}
-
-.sidebar-actions li a.active:hover {
-    background-color: #ffe8e5;
-    color: #d33b3b;
-}
-
-.sidebar-actions h3+li {
-    margin-top: 10px;
-}
-
-.sidebar-actions li+h3 {
-    margin-top: 24px;
-    border-bottom: 4px solid transparent;
-    border-image: linear-gradient(to right, #C60B4F, #8B0D57, #5D0A62, #550A5F) 1;
-}
-
 
 .btn-publi {
     position: fixed;
@@ -446,11 +562,11 @@ border-left: 1px solid #e0e0e0;
 
 .btn-publi a:nth-child(1) {
     border-top: 4px solid transparent;
-    border-image: linear-gradient(to right, #C60B4F, #8B0D57, #5D0A62, #550A5F) 1;
+    border-image: linear-gradient(to right, #2563eb, #3b82f6, #60a5fa, #93c5fd) 1;
 }
 
 .btn-publi a:hover {
-    color: #ff6b6b;
+    color: #2563eb;
     font-weight: 700;
 }
 
@@ -485,7 +601,7 @@ border-left: 1px solid #e0e0e0;
     border: 1px solid #e6e6e6;
     padding: 48px 40px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1500px;
     box-shadow: 0 24px 60px rgba(15, 15, 15, 0.1);
     animation: slideIn 0.4s ease-out;
 }
@@ -497,17 +613,17 @@ border-left: 1px solid #e0e0e0;
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ff6b6b;
-    box-shadow: 0 8px 24px rgba(255, 107, 107, 0.25);
+    border: 4px solid #2563eb;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.18);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 60px;
+    margin-bottom: 40px;
     justify-self: center;
     align-self: start;
 }
 
 .img-user:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 32px rgba(255, 107, 107, 0.35);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.24);
 }
 
 .data-user p {
@@ -527,8 +643,8 @@ border-left: 1px solid #e0e0e0;
 }
 
 .data-user p:hover {
-    background-color: #fff5f5;
-    border-color: #ff6b6b;
+    background-color: #eff6ff;
+    border-color: #2563eb;
     transform: translateX(4px);
 }
 
@@ -549,7 +665,7 @@ border-left: 1px solid #e0e0e0;
 }
 
 .data-user p button:hover {
-    background-color: rgba(255, 107, 107, 0.1);
+    background-color: rgba(37, 99, 235, 0.1);
 }
 
 .data-user p button img {
@@ -572,8 +688,8 @@ border-left: 1px solid #e0e0e0;
 }
 
 .edit-field:hover {
-    background-color: #fff1f3;
-    border-color: #ff6b6b;
+    background-color: #eff6ff;
+    border-color: #2563eb;
     transform: translateX(3px);
 }
 
@@ -622,14 +738,14 @@ border-left: 1px solid #e0e0e0;
 
 /* EDIT PROFILE BUTTON */
 .data-user button {
-    background: linear-gradient(135deg, #C60B4F 0%, #8B0D57 50%, #550A5F 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
     border: none;
     padding: 10px 16px;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-bottom: 20px;
-    box-shadow: 0 8px 24px rgba(198, 11, 79, 0.25);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.18);
     width: fit-content;
 }
 
@@ -645,12 +761,12 @@ border-left: 1px solid #e0e0e0;
 
 .data-user button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(198, 11, 79, 0.35);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.24);
 }
 
 .data-user button:active {
     transform: translateY(0);
-    box-shadow: 0 4px 16px rgba(198, 11, 79, 0.2);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.14);
 }
 
 @media (max-width: 768px) {
@@ -758,7 +874,7 @@ border-left: 1px solid #e0e0e0;
 
 /* efeito hover para a lista do menu -header */
 .content-text a:hover {
-    color: #ff6b6b;
+    color: #2563eb;
 }
 
 .content-text p:last-child {
@@ -798,7 +914,7 @@ border-left: 1px solid #e0e0e0;
 }
 
 .description-linux .description-name-card:hover {
-    color: #ff6b6b;
+    color: #2563eb;
     font-weight: 700;
 }
 
@@ -812,10 +928,10 @@ border-left: 1px solid #e0e0e0;
     border-top: 4px solid transparent;
 
     border-image: linear-gradient(to right,
-            #C60B4F,
-            #8B0D57,
-            #5D0A62,
-            #550A5F) 1;
+            #2563eb,
+            #3b82f6,
+            #60a5fa,
+            #93c5fd) 1;
     padding-top: 12px;
     margin-top: 0;
 }
@@ -899,7 +1015,7 @@ border-left: 1px solid #e0e0e0;
 .notice-container .card-noticia a {
     display: inline-block;
     margin-top: 12px;
-    color: #ff6b6b;
+    color: #2563eb;
     font-weight: 600;
     text-decoration: none;
 }
@@ -975,6 +1091,7 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 24px 60px rgba(15, 15, 15, 0.1);
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
+
 }
 
 .publication-list table {
@@ -1362,9 +1479,9 @@ border-left: 1px solid #e0e0e0;
 
 .input-group input:focus {
     outline: none;
-    border-color: #ff6b6b;
+    border-color: #2563eb;
     background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(255, 107, 107, 0.12);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
 .input-group input::placeholder {
@@ -1374,7 +1491,7 @@ border-left: 1px solid #e0e0e0;
 /* Botão de envio */
 .btn {
     padding: 14px 24px;
-    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
     border: none;
     border-radius: 12px;
     color: #ffffff;
@@ -1389,12 +1506,12 @@ border-left: 1px solid #e0e0e0;
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 12px 24px rgba(37, 99, 235, 0.24);
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 6px 12px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.14);
 }
 
 .btn:disabled {
@@ -1413,7 +1530,7 @@ border-left: 1px solid #e0e0e0;
 }
 
 .link-account a {
-    color: #ff6b6b;
+    color: #2563eb;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -1427,12 +1544,12 @@ border-left: 1px solid #e0e0e0;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #ff6b6b;
+    background-color: #2563eb;
     transition: width 0.3s ease;
 }
 
 .link-account a:hover {
-    color: #ff5252;
+    color: #1d4ed8;
 }
 
 .link-account a:hover::after {
@@ -1579,8 +1696,8 @@ border-left: 1px solid #e0e0e0;
 
 .insert-publication textarea:focus {
     background-color: #ffffff;
-    border-color: #ff6b6b;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .insert-publication textarea:hover:not(:focus) {
@@ -1604,7 +1721,7 @@ border-left: 1px solid #e0e0e0;
     outline: none;
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23ff6b6b' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232563eb' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 12px center;
     padding-right: 36px;
@@ -1612,8 +1729,8 @@ border-left: 1px solid #e0e0e0;
 
 .insert-publication select:focus {
     background-color: #ffffff;
-    border-color: #ff6b6b;
-    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .insert-publication select:hover:not(:focus) {
@@ -1633,7 +1750,7 @@ border-left: 1px solid #e0e0e0;
     padding: 14px 28px;
     border: none;
     border-radius: 12px;
-    background: linear-gradient(135deg, #C60B4F 0%, #8B0D57 50%, #550A5F 100%);
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
     color: #ffffff;
     font-size: 1rem;
     font-weight: 600;
@@ -1641,19 +1758,19 @@ border-left: 1px solid #e0e0e0;
     cursor: pointer;
     transition: all 0.3s ease;
     letter-spacing: 0.02em;
-    box-shadow: 0 8px 24px rgba(198, 11, 79, 0.25);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.18);
     align-self: flex-start;
     margin-top: 8px;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(198, 11, 79, 0.35);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.24);
 }
 
 .btn:active {
     transform: translateY(0);
-    box-shadow: 0 4px 16px rgba(198, 11, 79, 0.2);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.14);
 }
 
 /* ======================== PUBLICATIONS CONTAINER ======================== */
@@ -1946,9 +2063,9 @@ border-left: 1px solid #e0e0e0;
 
 .timeline-page {
     width: 100% !important;
-    max-width: 1400px !important;
+    max-width: calc(100% - (260px + 2rem)) !important;
     padding-right: 40px !important;
-    margin: 35px !important;
+    margin: 35px 35px 35px calc(260px + 2rem) !important;
     background: transparent !important;
     min-height: auto !important;
 }
@@ -1964,13 +2081,23 @@ border-left: 1px solid #e0e0e0;
 
 .timeline-page .pub-itens {
     height: auto !important;
-    max-height: 600px !important;
+    max-height: 680px !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
     position: relative;
-    padding-left: 16px !important;
+    padding: 28px !important;
     border: 1px solid #e6e6e6 !important;
     border-left: 3px solid #ff6b6b !important;
     border-radius: 18px !important;
+    background-color: #ffffff !important;
+    box-shadow: 0 12px 32px rgba(15, 15, 15, 0.06) !important;
+}
+
+.timeline-page .pub-itens p,
+.timeline-page .content-nl {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
 }
 
 .timeline-page .pub-itens::before {
@@ -2273,3 +2400,236 @@ border-left: 1px solid #e0e0e0;
     width: 15%;
     max-width: 15%;
 }
+
+/* ======================== EDIT USER PAGE ======================== */
+
+.update-user {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: calc(100vh - 300px);
+    padding: 32px 20px;
+    font-family: 'Inter', sans-serif;
+    padding-right: 250px; /* compensa a sidebar fixa, igual .profile-user */
+}
+
+.update-user-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 240px) minmax(1fr, 1fr);
+    gap: 28px;
+    background-color: #ffffff;
+    border-radius: 28px;
+    border: 1px solid #e6e6e6;
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 24px 60px rgba(15, 15, 15, 0.1);
+    animation: slideIn 0.4s ease-out;
+}
+
+/* ---- coluna esquerda: avatar + upload ---- */
+.update-user-avatar {
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.update-user-avatar form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+/* esconde o input file nativo e usa uma label estilizada no lugar */
+.update-user-avatar input[type="file"] {
+    display: none;
+}
+
+.update-user-avatar .file-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px dashed #d5d5d5;
+    border-radius: 14px;
+    background-color: #fafbfc;
+    color: #7f7f7f;
+    font-size: 0.88rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.update-user-avatar .file-label:hover {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+    color: #2563eb;
+}
+
+.update-user-avatar .file-label.has-file {
+    border-style: solid;
+    border-color: #2563eb;
+    color: #2563eb;
+    background-color: #eff6ff;
+}
+
+.update-user-avatar .btn {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 12px 20px;
+    font-size: 0.92rem;
+}
+
+/* ---- coluna direita: dados do formulário ---- */
+.update-user-fields {
+    grid-column: 2 / 3;
+}
+
+.update-user-fields form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* reaproveita o padrão de .insert-publication label/input/select */
+.update-user-fields label {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    margin-bottom: -8px;
+}
+
+.update-user-fields input,
+.update-user-fields select,
+.update-user-fields textarea {
+    padding: 12px 16px;
+    border: 1px solid #d5d5d5;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    color: #0f0f0f;
+    background-color: #fafbfc;
+    transition: all 0.3s ease;
+    outline: none;
+    width: 100%;
+}
+
+.update-user-fields input:focus,
+.update-user-fields select:focus,
+.update-user-fields textarea:focus {
+    background-color: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.update-user-fields input:hover:not(:focus),
+.update-user-fields select:hover:not(:focus),
+.update-user-fields textarea:hover:not(:focus) {
+    border-color: #e0e0e0;
+    background-color: #ffffff;
+}
+
+.update-user-fields input::placeholder,
+.update-user-fields textarea::placeholder {
+    color: #a8a8a8;
+}
+
+/* Aumenta a área do campo "Sobre você" para ocupar espaço abaixo quando disponível */
+.update-user-fields textarea {
+    min-height: 220px; /* ocupa a parte debaixo reservada */
+    resize: vertical;
+}
+
+@media (max-width: 768px) {
+    .update-user-fields textarea { min-height: 140px; }
+}
+
+.update-user-fields select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232563eb' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+}
+
+.update-user-fields button[type="submit"] {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.18);
+    margin-top: 8px;
+    align-self: flex-start;
+}
+
+.update-user-fields button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.24);
+}
+
+.update-user-fields button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.14);
+}
+
+/* ---- responsividade, mesmo padrão do .data-user ---- */
+@media (max-width: 768px) {
+    .update-user {
+        min-height: auto;
+        padding: 30px 16px;
+        padding-right: 16px;
+    }
+
+    .update-user-card {
+        padding: 36px 28px;
+        max-width: 100%;
+        gap: 24px;
+        grid-template-columns: 1fr;
+    }
+
+    .update-user-avatar {
+        grid-column: 1 / -1;
+    }
+
+    .update-user-fields button[type="submit"] {
+        align-self: stretch;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .update-user {
+        padding: 20px 12px;
+    }
+
+    .update-user-card {
+        padding: 28px 20px;
+        gap: 20px;
+    }
+}
+
+/* corrige o padding-right da sidebar em telas menores que 1100px, quando ela deixa de ser fixa */
+@media (max-width: 1100px) {
+    .update-user {
+        padding-right: 20px;
+    }
+}
+
