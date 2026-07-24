@@ -12,14 +12,13 @@ $isAdmin = !empty($_SESSION['admin']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil - Arphya</title>
-    <link rel="icon" href="../static/logohosthome.webp" type="img-icon" sizes="500x600">
+    <link class="logo-title" rel="icon" href="../static/logohosthome.webp" type="img-icon">
     <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
     <!--------------------------- H    E    A    D    E    R --------------------------->
-    <!--Logo e Nome-->
     <header>
         <div class="logo-name-pages">
             <a href="/">
@@ -28,7 +27,6 @@ $isAdmin = !empty($_SESSION['admin']);
         </div>
 
         <div class="header-actions">
-            <!---Menu header-->
             <nav>
                 <ul class="menu">
                     <li><a href="/">Início</a></li>
@@ -38,7 +36,6 @@ $isAdmin = !empty($_SESSION['admin']);
             </nav>
 
             <div class="user-info">
-                <!--Icone de person-->
                 <div class="person-icon"></div>
                 <button class="btn-login" id="menu">
                     <a href="/pages/profile.php">
@@ -62,7 +59,6 @@ $isAdmin = !empty($_SESSION['admin']);
         </div>
     </header>
 
-
     <div class="sidebar-lateral">
         <nav>
             <ul class="sidebar-actions">
@@ -85,38 +81,54 @@ $isAdmin = !empty($_SESSION['admin']);
     </div>
 
     <div class="update-user">
-        <form action="../upload_avatar.php" method="POST" enctype="multipart/form-data">
-            <input type="file" name="avatar">
-            <button class="btn" type="submit">Enviar</button>
-        </form>
+        <div class="update-user-card">
 
-        <form action="../update_user.php" method="POST">
-            <input type="hidden" name="action" value="update">
-            <input type="hidden" name="id" value="<?= $user_id ?>">
+            <!-- coluna esquerda: upload de avatar -->
+            <div class="update-user-avatar">
+                <form action="../upload_avatar.php" method="POST" enctype="multipart/form-data">
+                    <label class="file-label" for="avatar-input" id="avatar-label">
+                        Escolher imagem
+                    </label>
+                    <input type="file" name="avatar" id="avatar-input"
+                        onchange="document.getElementById('avatar-label').textContent = this.files[0] ? this.files[0].name : 'Escolher imagem'; document.getElementById('avatar-label').classList.toggle('has-file', !!this.files[0]);">
+                    <button class="btn" type="submit">Enviar imagem</button>
+                </form>
+            </div>
 
-            <label>Nome:</label>
-            <input type="text" name="name" placeholder="Altere seu nome">
+            <!-- coluna direita: dados do usuário -->
+            <div class="update-user-fields">
+                <form action="../update_user.php" method="POST">
+                    <input type="hidden" name="action" value="update">
+                    <input type="hidden" name="id" value="<?= $user_id ?>">
 
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Altere seu email">
+                    <label>Nome:</label>
+                    <input type="text" name="name" placeholder="Altere seu nome">
 
-            <label>Idade:</label>
-            <input type="number" name="age" placeholder="Altere sua idade">
+                    <label>Email:</label>
+                    <input type="email" name="email" placeholder="Altere seu email">
 
-            <label>Sexo:</label>
-            <select name="sex">
-                <option value="">Manter o atual</option>
-                <option value="Masculino">Masculino</option>
-                <option value="Feminino">Feminino</option>
-            </select>
+                    <label>Idade:</label>
+                    <input type="number" name="age" placeholder="Altere sua idade">
 
-            <label>Telefone:</label>
-            <input type="text" name="phone" placeholder="Altere seu telefone">
+                    <label>Sexo:</label>
+                    <select name="sex">
+                        <option value="">Manter o atual</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                    </select>
 
-            <label>Sobre você:</label>
-            <input type="text" name="about" placeholder="Atualize seu sobre">
+                    <label>Telefone:</label>
+                    <input type="text" name="phone" placeholder="Altere seu telefone">
 
-            <button type="submit">Salvar</button>
-        </form>
+                    <label>Sobre você:</label>
+                    <textarea name="about" placeholder="Atualize seu sobre"></textarea>
+
+                    <button type="submit">Salvar</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
 
 </body>
+</html>
