@@ -162,7 +162,7 @@ try {
 - O banco de dados usado é PostgreSQL.
 - Use um editor/IDE como VS Code ou PHPStorm para editar o código.
 - O arquivo `config.php` deve ser ajustado conforme o seu ambiente local.
-- `banco.db` contém a estrutura do banco de dados e deve ser usado para i   mportar o schema.
+- `banco.db` contém a estrutura do banco de dados e deve ser usado para importar o schema.
 - Você pode iniciar o servidor de desenvolvimento local com `php -S localhost:2002` ou outra porta livre.
 - Execute os comandos no terminal a partir da pasta raiz do projeto após clonar o repositório.
 - As rotas principais e a organização de pastas estão listadas acima para facilitar a navegação.

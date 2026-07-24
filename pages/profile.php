@@ -11,8 +11,8 @@ $isAdmin = !empty($_SESSION['admin']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/logohosthome.webp" type="img-icon">
     <title>Perfil - Arphya</title>
-    <link class="logo-title" rel="icon" href="../static/logohosthome.webp" type="img-icon">
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -21,10 +21,9 @@ $isAdmin = !empty($_SESSION['admin']);
     <!--------------------------- H    E    A    D    E    R --------------------------->
     <!--Logo e Nome-->
     <header>
-        <div class="logo-name">
-            <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
+        <div class="logo-name-pages">
             <a href="/">
-                <h2><strong>Arphya</strong></h2>
+                <img src="/static/arphya_name_logowhite.png" alt="Arphya">
             </a>
         </div>
 
@@ -42,7 +41,7 @@ $isAdmin = !empty($_SESSION['admin']);
                 <!--Icone de person-->
                 <div class="person-icon"></div>
                 <button class="btn-login" id="menu">
-                    <a href="/pages/login.php">
+                    <a href="/pages/profile.php">
                         <img src="/static/person-icon.png" alt="icon-login">
                     </a>
                 </button>
@@ -93,7 +92,7 @@ $isAdmin = !empty($_SESSION['admin']);
 
             if ($user_id > 0) {
 
-                $stmt = $pdo->prepare("SELECT name, email, age, sex, phone, avatar, data_cadastro, type FROM users WHERE id = ?");
+                $stmt = $pdo->prepare("SELECT name, email, age, sex, phone, avatar, data_cadastro, about, type FROM users WHERE id = ?");
                 $stmt->execute([$user_id]);
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -104,51 +103,77 @@ $isAdmin = !empty($_SESSION['admin']);
                 src="<?= $user['avatar'] ? '/uploads/avatars/' . htmlspecialchars($user['avatar']) : '/static/person-icon.png' ?>"
                 alt="avatar">
 
+            <p class="data-about"><strong>Sobre mim:</strong>
+                <span>
+                    <?= htmlspecialchars($user['about'] ?? 'Você ainda não falou sobre você') ?>
+                </span>
+                <a class="edit-field" href="/pages/edit_user.php?field=about" title="Editar sobre">
+                    <img src="../static/edit-button.png" alt="editar">
+                </a>
+            </p>
+
+
+
+
             <p><strong>Nome:</strong>
-                <span><?= htmlspecialchars($user['name']) ?></span>
+                <span>
+                    <?= htmlspecialchars($user['name']) ?>
+                </span>
                 <a class="edit-field" href="/pages/edit_user.php?field=name" title="Editar nome">
                     <img src="../static/edit-button.png" alt="editar">
                 </a>
             </p>
             <p><strong>Email:</strong>
-                <span><?= htmlspecialchars($user['email']) ?></span>
+                <span>
+                    <?= htmlspecialchars($user['email']) ?>
+                </span>
                 <a class="edit-field" href="/pages/edit_user.php?field=email" title="Editar email">
                     <img src="../static/edit-button.png" alt="editar">
                 </a>
             </p>
             <p><strong>Idade:</strong>
-                <span><?= htmlspecialchars($user['age'] ?? 'dado não encontrado') ?></span>
+                <span>
+                    <?= htmlspecialchars($user['age'] ?? 'dado não encontrado') ?>
+                </span>
                 <a class="edit-field" href="/pages/edit_user.php?field=age" title="Editar idade">
                     <img src="../static/edit-button.png" alt="editar">
                 </a>
             </p>
             <p><strong>Sexo:</strong>
-                <span><?= htmlspecialchars($user['sex'] ?? 'dado não encontrado') ?></span>
+                <span>
+                    <?= htmlspecialchars($user['sex'] ?? 'dado não encontrado') ?>
+                </span>
                 <a class="edit-field" href="/pages/edit_user.php?field=sex" title="Editar sexo">
                     <img src="../static/edit-button.png" alt="editar">
                 </a>
             </p>
             <p><strong>Telefone:</strong>
-                <span><?= htmlspecialchars($user['phone'] ?? 'dado não encontrado') ?></span>
+                <span>
+                    <?= htmlspecialchars($user['phone'] ?? 'dado não encontrado') ?>
+                </span>
                 <a class="edit-field" href="/pages/edit_user.php?field=phone" title="Editar telefone">
                     <img src="../static/edit-button.png" alt="editar">
                 </a>
             </p>
             <p><strong>Tipo:</strong>
-                <span><?= htmlspecialchars($user['type']) ?></span>
-                <a class="edit-field" href="/pages/edit_user.php?field=type" title="Editar tipo">
-                    <img src="../static/edit-button.png" alt="editar">
-                </a>
+                <span>
+                    <?= htmlspecialchars($user['type']) ?>
+                </span>
             </p>
             <p><strong>Img:</strong>
-                <span><?= htmlspecialchars($user['avatar'] ?? 'Sem foto') ?></span>
+                <span>
+                    <?= htmlspecialchars($user['avatar'] ?? 'Sem foto') ?>
+                </span>
                 <a class="edit-field" href="/pages/edit_user.php?field=avatar" title="Editar imagem">
                     <img src="../static/edit-button.png" alt="editar">
                 </a>
             </p>
             <p><strong>Cadastro:</strong>
-                <span><?= date('d/m/Y', strtotime($user['data_cadastro'])) ?></span>
+                <span>
+                    <?= date('d/m/Y', strtotime($user['data_cadastro'])) ?>
+                </span>
             </p>
+
 
             <?php } else {
                     echo "<p>USUARIO NAO ECONTRADO</p>";
@@ -166,7 +191,6 @@ $isAdmin = !empty($_SESSION['admin']);
         <p>
             <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
         </p>
-    </div>
     </div>
 
 </body>

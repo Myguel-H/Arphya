@@ -25,9 +25,9 @@ if ($user_id > 0) {
   <!--Logo e Nome-->
   <header>
     <div class="logo-name">
-      <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
+
       <a href="/">
-        <h2><strong>Arphya</strong> - <strong style="color: #dd1e1e; text-decoration: none">Fase Beta, ainda em teste!</strong></h2>
+        <img src="/static/arphya_name_logowhite.png" alt="Arphya">
       </a>
     </div>
 
@@ -146,8 +146,12 @@ if ($user_id > 0) {
         </p>
 
         <p>O que é GNU/Linux ? <a href="https://www.vivaolinux.com.br/linux/">clique aqui</a></p>
-        <p>Historia do GNU/Linux ? <a href="https://www.vivaolinux.com.br/artigo/Historia-do-GNU-Linux-1965-assim-tudo-comecou/">clique aqui</a></p>
-        <p>Porque GNU/Linux ? <a href="https://www.vivaolinux.com.br/artigo/GNU-Linux-Depois-dele-o-mundo-nao-e-mais-o-mesmo/">clique aqui</a></p>
+        <p>Historia do GNU/Linux ? <a
+            href="https://www.vivaolinux.com.br/artigo/Historia-do-GNU-Linux-1965-assim-tudo-comecou/">clique aqui</a>
+        </p>
+        <p>Porque GNU/Linux ? <a
+            href="https://www.vivaolinux.com.br/artigo/GNU-Linux-Depois-dele-o-mundo-nao-e-mais-o-mesmo/">clique
+            aqui</a></p>
 
       </div>
     </div>
@@ -170,15 +174,16 @@ if ($user_id > 0) {
 
     <!------------------------- F    O    O    T    E    R --------------------------->
 
-    <div class="footer-container">
-      <p>
-        <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
-      </p>
-    </div>
   </div>
+
 
 
 
 </body>
 
+  <div class="footer-container">
+    <p>
+      <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
+    </p>
+  </div>
 </html>

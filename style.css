@@ -26,6 +26,8 @@ header {
     padding: 12px 2vw;
     border-bottom: 1px solid #e0e0e0;
     font-family: 'Inter', sans-serif;
+    position: relative;
+    height: 90px; /* define uma altura fixa! */
 }
 
 /* logo + nome */
@@ -36,12 +38,28 @@ header {
     margin-left: 2vw;
 }
 
-.logo-name a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
+.logo-name > a {
+    height: auto;
+    width: auto;
 }
+
+.logo-name a img {
+    display: block;
+    height: 100px;
+    width: auto;
+    max-width: 240px;
+}
+
+
+
+/* A imagem não pode ultrapassar a altura do header */
+.logo-name-pages a img {
+    height: 80px; /* altura desejada, menor que a do header */
+    width: auto;
+    max-height: 100%; /* garante que não ultrapasse o header */
+    object-fit: contain; /* mantém proporção */
+}
+
 
 .logo-icon {
     width: 60px;
@@ -460,7 +478,7 @@ border-left: 1px solid #e0e0e0;
 
 .data-user {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: minmax(220px, 240px) minmax(1fr, 1fr);
     gap: 28px;
     background-color: #ffffff;
     border-radius: 28px;
@@ -473,7 +491,8 @@ border-left: 1px solid #e0e0e0;
 }
 
 .img-user {
-    grid-column: 1 / -1;
+    grid-column: 1 / 2;
+    grid-row: 1;
     width: 140px;
     height: 140px;
     border-radius: 50%;
@@ -481,7 +500,9 @@ border-left: 1px solid #e0e0e0;
     border: 4px solid #ff6b6b;
     box-shadow: 0 8px 24px rgba(255, 107, 107, 0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 0 auto;
+    margin-top: 60px;
+    justify-self: center;
+    align-self: start;
 }
 
 .img-user:hover {
@@ -567,6 +588,38 @@ border-left: 1px solid #e0e0e0;
     word-break: break-word;
 }
 
+.data-about {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    padding: 18px 20px;
+    background-color: #f9f9f9;
+    border-radius: 18px;
+    border: 1px solid #e6e6e6;
+    box-shadow: inset 0 0 0 1px rgba(255, 107, 107, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.data-user p.data-about {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.data-about strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.data-about span {
+    color: #4f4f4f;
+    line-height: 1.75;
+    max-width: 100%;
+    white-space: normal;
+}
+
 /* EDIT PROFILE BUTTON */
 .data-user button {
     background: linear-gradient(135deg, #C60B4F 0%, #8B0D57 50%, #550A5F 100%);
@@ -610,11 +663,15 @@ border-left: 1px solid #e0e0e0;
         padding: 36px 28px;
         max-width: 100%;
         gap: 20px;
+        grid-template-columns: 1fr;
     }
 
     .img-user {
+        margin-top: 30px;
         width: 120px;
         height: 120px;
+        grid-column: 1 / -1;
+        justify-self: center;
     }
 
     .data-user p {
