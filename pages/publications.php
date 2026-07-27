@@ -142,13 +142,16 @@ $isAdmin = !empty($_SESSION['admin']);
             }
             ?>
         </div>
-        <?php
-            } else {
-                echo "<p>Nenhuma publicação encontrada</p></div>";
-            }
-        } else {
-            echo "<p>Por favor, faça login para visualizar publicações</p>";
-        } ?>
+         <?php } else { ?>
+            <div class="login-message">
+                <p>Nenhuma publicação encontrada, publique alguma ! <a href='/pages/add_publication.php'>Clique aqui</a></p>
+            </div>
+        <?php } ?>
+        <?php } else { ?>
+            <div class="login-message">
+                <p>Por favor, faça login para visualizar suas publicação.</p>
+            </div>
+        <?php } ?>
 
     </div>
 

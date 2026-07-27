@@ -50,8 +50,10 @@ $isAdmin = !empty($_SESSION['admin']);
 
                     if ($user) {
                         ?>
-                        <p><?= htmlspecialchars($user['name']) ?></p>
-                        <?php
+                <p>
+                    <?= htmlspecialchars($user['name']) ?>
+                </p>
+                <?php
                     }
                 }
                 ?>
@@ -67,10 +69,10 @@ $isAdmin = !empty($_SESSION['admin']);
                 <li><a href="/pages/publications.php">Publicações</a></li>
                 <li><a href="/pages/timeline.php">Timeline</a></li>
                 <?php if ($isAdmin): ?>
-                    <h3>Administrador</h3>
-                    <li><a href="/admin/conf_users.php">Usuarios</a></li>
-                    <li><a href="/admin/conf_publications.php">Publicações</a></li>
-                    <li><a href="/admin/conf_categories.php">Categorias</a></li>
+                <h3>Administrador</h3>
+                <li><a href="/admin/conf_users.php">Usuarios</a></li>
+                <li><a href="/admin/conf_publications.php">Publicações</a></li>
+                <li><a href="/admin/conf_categories.php">Categorias</a></li>
                 <?php endif; ?>
                 <h3>Sobre</h3>
                 <li><a href="#">Configurações</a></li>
@@ -81,54 +83,67 @@ $isAdmin = !empty($_SESSION['admin']);
     </div>
 
     <div class="update-user">
+
+        <?php
+
+        $user_id = $_SESSION['user_id'] ?? 0;
+
+        if ($user_id > 0) {
+            ?>
         <div class="update-user-card">
 
             <!-- coluna esquerda: upload de avatar -->
-            <div class="update-user-avatar">
-                <form action="../upload_avatar.php" method="POST" enctype="multipart/form-data">
-                    <label class="file-label" for="avatar-input" id="avatar-label">
-                        Escolher imagem
-                    </label>
-                    <input type="file" name="avatar" id="avatar-input"
-                        onchange="document.getElementById('avatar-label').textContent = this.files[0] ? this.files[0].name : 'Escolher imagem'; document.getElementById('avatar-label').classList.toggle('has-file', !!this.files[0]);">
-                    <button class="btn" type="submit">Enviar imagem</button>
-                </form>
+                <div class="update-user-avatar">
+                    <form action="../upload_avatar.php" method="POST" enctype="multipart/form-data">
+                        <label class="file-label" for="avatar-input" id="avatar-label">
+                            Escolher imagem
+                        </label>
+                        <input type="file" name="avatar" id="avatar-input"
+                            onchange="document.getElementById('avatar-label').textContent = this.files[0] ? this.files[0].name : 'Escolher imagem'; document.getElementById('avatar-label').classList.toggle('has-file', !!this.files[0]);">
+                        <button class="btn" type="submit">Enviar imagem</button>
+                    </form>
+                </div>
+
+                <!-- coluna direita: dados do usuário -->
+                <div class="update-user-fields">
+                    <form action="../update_user.php" method="POST">
+                        <input type="hidden" name="action" value="update">
+                        <input type="hidden" name="id" value="<?= $user_id ?>">
+
+                        <label>Nome:</label>
+                        <input type="text" name="name" placeholder="Altere seu nome">
+
+                        <label>Email:</label>
+                        <input type="email" name="email" placeholder="Altere seu email">
+
+                        <label>Idade:</label>
+                        <input type="number" name="age" placeholder="Altere sua idade">
+
+                        <label>Sexo:</label>
+                        <select name="sex">
+                            <option value="">Manter o atual</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
+
+                        <label>Telefone:</label>
+                        <input type="text" name="phone" placeholder="Altere seu telefone">
+
+                        <label>Sobre você:</label>
+                        <textarea name="about" placeholder="Atualize seu sobre"></textarea>
+
+                        <button type="submit">Salvar</button>
+                    </form>
+                </div>
+
             </div>
-
-            <!-- coluna direita: dados do usuário -->
-            <div class="update-user-fields">
-                <form action="../update_user.php" method="POST">
-                    <input type="hidden" name="action" value="update">
-                    <input type="hidden" name="id" value="<?= $user_id ?>">
-
-                    <label>Nome:</label>
-                    <input type="text" name="name" placeholder="Altere seu nome">
-
-                    <label>Email:</label>
-                    <input type="email" name="email" placeholder="Altere seu email">
-
-                    <label>Idade:</label>
-                    <input type="number" name="age" placeholder="Altere sua idade">
-
-                    <label>Sexo:</label>
-                    <select name="sex">
-                        <option value="">Manter o atual</option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                    </select>
-
-                    <label>Telefone:</label>
-                    <input type="text" name="phone" placeholder="Altere seu telefone">
-
-                    <label>Sobre você:</label>
-                    <textarea name="about" placeholder="Atualize seu sobre"></textarea>
-
-                    <button type="submit">Salvar</button>
-                </form>
+        <?php } else { ?>
+            <div class="login-message">
+                <p>Por favor, faça login para alterar seus dados.</p>
             </div>
-
-        </div>
+        <?php } ?>
     </div>
 
 </body>
+
 </html>

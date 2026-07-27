@@ -142,15 +142,12 @@ $isAdmin = !empty($_SESSION['admin']);
             }
             ?>
         </div>
-        <?php
-        } elseif ($user_id > 0) {
-            
-            echo "<p>Nada foi publicado ainda ! Seja o primeiro a publicar, <a href='/pages/add_publication.php'>Clique aqui</a>.</p>";
-        }  else {
-            
-            echo "<p>Nada foi publicado ainda ! Seja o primeiro a publicar, <a href='/pages/login.php'>Clique aqui</a>.</p>";
-        }
-        ?>
+                <?php } else { ?>
+            <div class="login-message">
+                <p>Não há publicações ainda. Seja o primeiro a publicar ! <a href='/pages/add_publication.php'>Clique aqui</a></p> </p>
+            </div>
+        <?php } ?>
+
 
     </div>
 

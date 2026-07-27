@@ -133,11 +133,11 @@ $isAdmin = !empty($_SESSION['admin']);
             </div>
             <button class="btn" type="submit">Publicar</button>
         </form>
-        <?php
-        } else {
-            echo "<p>Você não está logado</p>";
-        }
-        ?>
+        <?php } else { ?>
+            <div class="login-message">
+                <p>Por favor, faça login para criar um publicação.</p>
+            </div>
+        <?php } ?>
     </div>
 
     <!------------------------- F    O    O    T    E    R --------------------------->

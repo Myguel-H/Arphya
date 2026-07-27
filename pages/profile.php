@@ -179,7 +179,7 @@ $isAdmin = !empty($_SESSION['admin']);
                     echo "<p>USUARIO NAO ECONTRADO</p>";
                 }
             } else {
-                echo "<p>Você não está logado, faça login para poder visualizar! </p>";
+                echo "<p>Você não está logado, faça login para poder visualizar!  <a href='/pages/login.php'>Clique aqui</a> </p>";
             } ?>
         </div>
 

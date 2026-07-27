@@ -1,19 +1,19 @@
 <?php
 session_start();
-require_once 'config.php'; //pede ao config acessos
+require_once 'config.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') { //veio metodo POST de outro arquivo enviado para auth.php, se veio ele percorre o código 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $_POST['action'] ?? '';
 
-    if ($action == 'login') { //se a ação for login
+    if ($action == 'login') {
         $email = $_POST['email'] ?? '';
         $password = $_POST['password'] ?? '';
 
 
 
-        $stmt = $pdo->prepare('SELECT * FROM users WHERE email = ?'); //prepare o banco de dados
-        $stmt->execute([$email]); //envia o valor da variavel/percorre o banco
-        $user = $stmt->fetch(); //pega o valor (pedro, joao)
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE email = ?'); 
+        $stmt->execute([$email]); 
+        $user = $stmt->fetch();
 
 
         if ($user && password_verify($password, $user['password'])) {
@@ -26,10 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //veio metodo POST de outro arquivo 
                 $_SESSION['admin'] = false;
             }
 
-            header('Location: /pages/profile.php?logado'); //se os dados tiverem corretos manda para a location
+            header('Location: /pages/profile.php?logado');
             exit();
         } else {
-            header('Location: /pages/login.php?error=1'); //dads incorretos, permanecem no login e na url retorna erro
+            header('Location: /pages/login.php?error=1');
             exit();
         }
     }
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { //veio metodo POST de outro arquivo 
         $email = $_POST['email'] ?? '';
         $password = $_POST['password'] ?? '';
 
-        $hashPassword = password_hash($password, PASSWORD_DEFAULT); //criptografa a senha do usuario
+        $hashPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE email = ?");
         $stmt->execute([$email]);
