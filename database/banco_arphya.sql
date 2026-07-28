@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict G6XIrcpX22QmQyLXhhPr6qfvhyONPaaoCpp1WHM0MiFHdpTzZhlyjCKr6cwsYju
+\restrict gFZJewU61gwFdgyNGC8idatSnt2HdLNUocBPtoeLUBAkagWdkYwfg4uVAuOwwYi
 
 -- Dumped from database version 15.18 (Debian 15.18-0+deb12u1)
 -- Dumped by pg_dump version 15.18 (Debian 15.18-0+deb12u1)
@@ -17,6 +17,22 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
+
+--
+-- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
+--
+
+-- *not* creating schema, since initdb creates it
+
+
+ALTER SCHEMA public OWNER TO postgres;
+
+--
+-- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
+--
+
+COMMENT ON SCHEMA public IS '';
+
 
 SET default_tablespace = '';
 
@@ -113,8 +129,7 @@ CREATE TABLE public.users (
     data_cadastro timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     password character varying(255) NOT NULL,
     type character varying(20) DEFAULT 'comum'::character varying,
-    about character varying(500),
-    CONSTRAINT chk_sex CHECK (((sex)::text = ANY ((ARRAY['Masculino'::character varying, 'Feminino'::character varying])::text[])))
+    about text
 );
 
 
@@ -188,8 +203,16 @@ ALTER TABLE ONLY public.users
 
 
 --
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE USAGE ON SCHEMA public FROM PUBLIC;
+GRANT ALL ON SCHEMA public TO nygts;
+
+
+--
 -- PostgreSQL database dump complete
 --
 
-\unrestrict G6XIrcpX22QmQyLXhhPr6qfvhyONPaaoCpp1WHM0MiFHdpTzZhlyjCKr6cwsYju
+\unrestrict gFZJewU61gwFdgyNGC8idatSnt2HdLNUocBPtoeLUBAkagWdkYwfg4uVAuOwwYi
 
