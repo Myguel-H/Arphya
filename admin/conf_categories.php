@@ -35,8 +35,8 @@ $isAdmin = !empty($_SESSION['admin']);
                 <ul class="menu">
                     <li><a href="/">Início</a></li>
                     <li><a href="/pages/profile.php">Perfil</a></li>
-                    <li><a href="/admin/conf_publications.php">*Publicações</a></li>
-                    <li><a href="/admin/conf_users.php">*Usuários</a></li>
+                    <li><a href="/admin/conf_publications.php"><strong style="color: #dd1e1e;">*</strong>Publicações</a></li>
+                    <li><a href="/admin/conf_users.php"><strong style="color: #dd1e1e;">*</strong>Usuários</a></li>
                 </ul>
             </nav>
 
@@ -132,11 +132,5 @@ $isAdmin = !empty($_SESSION['admin']);
     </div>
 
     <!------------------------- F    O    O    T    E    R --------------------------->
-
-    <div class="footer-container">
-        <p>
-            <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
-        </p>
-    </div>
 
 </body>

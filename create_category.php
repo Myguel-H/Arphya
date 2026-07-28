@@ -7,12 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     if ($action == 'create') {
-        $name = $_POST['name_category'] ?? '';
+        $name = $_POST['name'] ?? '';
+        $link = $_POST['link'] ?? '';
         $description = $_POST['description'] ?? '';
 
         try {
-            $stmt = $pdo->prepare('INSERT INTO categories (name, description) VALUES (?, ?)');
-            $stmt->execute([$name, $description]);
+            $stmt = $pdo->prepare('INSERT INTO categories (name, link, description) VALUES (?, ?, ?)');
+            $stmt->execute([$name, $link, $description]);
             header('Location: /pages/add_categories.php?registered=1');
             exit();
         } catch (PDOException $e) {

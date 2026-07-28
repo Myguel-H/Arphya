@@ -78,7 +78,7 @@ $isAdmin = !empty($_SESSION['admin']);
                 <?php endif; ?>
                 <h3>Sobre</h3>
                 <li><a href="#">Configurações</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="/about.php">Sobre</a></li>
                 <li><a href="../logout.php">Sair</a></li>
             </ul>
         </nav>
@@ -133,19 +133,13 @@ $isAdmin = !empty($_SESSION['admin']);
             </div>
             <button class="btn" type="submit">Publicar</button>
         </form>
-        <?php
-        } else {
-            echo "<p>Você não está logado</p>";
-        }
-        ?>
+        <?php } else { ?>
+            <div class="login-message">
+                <p>Por favor, faça login para criar um publicação.</p>
+            </div>
+        <?php } ?>
     </div>
 
     <!------------------------- F    O    O    T    E    R --------------------------->
-
-    <div class="footer-container">
-        <p>
-            <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
-        </p>
-    </div>
 
 </body>

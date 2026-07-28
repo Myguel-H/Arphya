@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php';
 session_start();
+require_once 'config.php';
 $user_id = $_SESSION['user_id'] ?? 0;
 
 if ($user_id > 0) {
@@ -69,11 +69,17 @@ if ($user_id > 0) {
 
       <!--Input de busca-->
       <div class="search-container">
-        <input id="search" type="text" placeholder="O que é UDP ?" class="search-input">
+        <form method="GET" action="/search.php">
+        <input type="text" name="search" placeholder="O que é UDP ?" class="search-input">
+
+
         <label for="search" class="search-icon">
-          <img src="/static/search-icon.webp" alt="Search Icon">
+         <button class="search-icon" type="submit"><img src="/static/search-icon.webp" alt="Search Icon"></button>
         </label>
+
+      </form>
       </div>
+
     </div>
   </header>
 
@@ -177,15 +183,11 @@ if ($user_id > 0) {
 
   </div>
 
-
-
+    <footer class="footer-container">
+      <p>
+        <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
+      </p>
+    </footer>
 
 </body>
-
-<div class="footer-container">
-  <p>
-    <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
-  </p>
-</div>
-
 </html>
