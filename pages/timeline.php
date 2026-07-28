@@ -80,7 +80,7 @@ $isAdmin = !empty($_SESSION['admin']);
                 <?php endif; ?>
                 <h3>Sobre</h3>
                 <li><a href="#">Configurações</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="/about.php">Sobre</a></li>
                 <li><a href="../logout.php">Sair</a></li>
             </ul>
         </nav>
@@ -142,15 +142,12 @@ $isAdmin = !empty($_SESSION['admin']);
             }
             ?>
         </div>
-        <?php
-        } elseif ($user_id > 0) {
-            
-            echo "<p>Nada foi publicado ainda ! Seja o primeiro a publicar, <a href='/pages/add_publication.php'>Clique aqui</a>.</p>";
-        }  else {
-            
-            echo "<p>Nada foi publicado ainda ! Seja o primeiro a publicar, <a href='/pages/login.php'>Clique aqui</a>.</p>";
-        }
-        ?>
+                <?php } else { ?>
+            <div class="login-message">
+                <p>Não há publicações ainda. Seja o primeiro a publicar ! <a href='/pages/add_publication.php'>Clique aqui</a></p> </p>
+            </div>
+        <?php } ?>
+
 
     </div>
 

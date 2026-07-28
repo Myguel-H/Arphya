@@ -1,6 +1,6 @@
 <?php
-require_once 'config.php';
 session_start();
+require_once 'config.php';
 $user_id = $_SESSION['user_id'] ?? 0;
 
 if ($user_id > 0) {
@@ -182,9 +182,6 @@ if ($user_id > 0) {
     <!------------------------- F    O    O    T    E    R --------------------------->
 
   </div>
-
-
-
 
     <footer class="footer-container">
       <p>

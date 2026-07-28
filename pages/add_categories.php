@@ -79,13 +79,14 @@ $isAdmin = !empty($_SESSION['admin']);
                 <?php endif; ?>
                 <h3>Sobre</h3>
                 <li><a href="#">Configurações</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="/about.php">Sobre</a></li>
                 <li><a href="../logout.php">Sair</a></li>
             </ul>
         </nav>
     </div>
 
     <div class="add-publication">
+        <?php if ($user_id > 0) { ?>
         <form action="../create_category.php" method="POST">
             <input type="hidden" name="action" value="create">
             <div class="insert-publication">
@@ -99,7 +100,6 @@ $isAdmin = !empty($_SESSION['admin']);
                 <label for="description">Descrição</label>
                 <textarea name="description" required="required" maxlength="250"
                     placeholder="Digite uma breve descrição da categoria... Limitado a 250 caracteres"></textarea>
-                </select>
 
             </div>
             <button class="btn" type="submit">Criar</button>
@@ -112,10 +112,8 @@ $isAdmin = !empty($_SESSION['admin']);
                     <thead>
                         <tr>
                             <?php if ($isAdmin): ?>
-
                                 <th>ID</th>
                             <?php endif; ?>
-
                             <th>Name</th>
                             <th>Descrição</th>
                         </tr>
@@ -126,30 +124,25 @@ $isAdmin = !empty($_SESSION['admin']);
                         $category = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         foreach ($category as $row):
-                            ?>
+                        ?>
                             <tr>
                                 <?php if ($isAdmin): ?>
-                                    <td>
-                                        <?= $row['id'] ?>
-                                    </td>
+                                    <td><?= $row['id'] ?></td>
                                 <?php endif; ?>
-                                <td>
-                                    <?= htmlspecialchars($row['name']) ?>
-                                </td>
-                                <td>
-                                    <?= htmlspecialchars($row['description']) ?>
-                                </td>
+                                <td><?= htmlspecialchars($row['name']) ?></td>
+                                <td><?= htmlspecialchars($row['description']) ?></td>
                             </tr>
-
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
         </div>
-        <?php
-        ?>
+        <?php } else { ?>
+            <div class="login-message">
+                <p>Por favor, faça login para visualizar categorias.</p>
+            </div>
+        <?php } ?>
     </div>
 
-    <!------------------------- F    O    O    T    E    R --------------------------->
-
 </body>
+</html>

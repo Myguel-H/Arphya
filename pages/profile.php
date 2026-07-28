@@ -78,7 +78,7 @@ $isAdmin = !empty($_SESSION['admin']);
                 <?php endif; ?>
                 <h3>Sobre</h3>
                 <li><a href="#">Configurações</a></li>
-                <li><a href="#">Sobre</a></li>
+                <li><a href="/about.php">Sobre</a></li>
                 <li><a href="../logout.php">Sair</a></li>
             </ul>
         </nav>
@@ -178,7 +178,7 @@ $isAdmin = !empty($_SESSION['admin']);
                     echo "<p>USUARIO NAO ECONTRADO</p>";
                 }
             } else {
-                echo "<p>Você não está logado, faça login para poder visualizar! </p>";
+                echo "<p>Você não está logado, faça login para poder visualizar!  <a href='/pages/login.php'>Clique aqui</a> </p>";
             } ?>
         </div>
 
