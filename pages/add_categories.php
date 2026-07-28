@@ -23,9 +23,9 @@ $isAdmin = !empty($_SESSION['admin']);
     <!--Logo e Nome-->
     <header>
         <div class="logo-name-pages">
-      <a href="/">
-        <img src="/static/arphya_name_logowhite.png" alt="Arphya">
-      </a>
+            <a href="/">
+                <img src="/static/arphya_name_logowhite.png" alt="Arphya">
+            </a>
         </div>
 
         <div class="header-actions">
@@ -89,8 +89,12 @@ $isAdmin = !empty($_SESSION['admin']);
         <form action="../create_category.php" method="POST">
             <input type="hidden" name="action" value="create">
             <div class="insert-publication">
-                <label for="name_category">Categoria</label>
-                <input type="text" name="name_category" required="required" placeholder="Digite uma categoria">
+                <label for="name">Categoria</label>
+                <input type="text" name="name" required="required" placeholder="Digite uma categoria">
+
+                <label for="link">Link</label>
+                <input type="text" name="link" required="required" placeholder="Url de referência">
+
 
                 <label for="description">Descrição</label>
                 <textarea name="description" required="required" maxlength="250"
@@ -147,11 +151,5 @@ $isAdmin = !empty($_SESSION['admin']);
     </div>
 
     <!------------------------- F    O    O    T    E    R --------------------------->
-
-    <div class="footer-container">
-        <p>
-            <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
-        </p>
-    </div>
 
 </body>
