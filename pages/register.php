@@ -22,7 +22,7 @@
                 <div class="error">Registrado com sucesso !</div>
             <?php endif; ?>
 
-            <form action="../auth.php" class="form-box" method="POST">
+            <form action="../register_user.php" class="form-box" method="POST">
                 <input type="hidden" name="action" value="register">
                 <div class="input-group">
                     <label for="name">Name</label>

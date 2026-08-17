@@ -36,7 +36,7 @@ if ($user_id > 0) {
       <!---Menu header-->
       <nav>
         <ul class="menu">
-          <li><a href="/">Início</a></li>
+          <li><a href="/about.php">Sobre</a></li>
           <li><a href="/pages/publications.php">Publicações</a></li>
           <li><a href="#">Tags</a></li>
           <li><a href="/pages/timeline.php">Timeline</a></li>
