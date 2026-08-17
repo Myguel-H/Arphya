@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict gFZJewU61gwFdgyNGC8idatSnt2HdLNUocBPtoeLUBAkagWdkYwfg4uVAuOwwYi
+\restrict QG2O5BBJM2IK7cMNly9JsF7TUBF0WWTzQDf17dzVjRXvNNrwkFKpVDl35a7N84d
 
 -- Dumped from database version 15.18 (Debian 15.18-0+deb12u1)
 -- Dumped by pg_dump version 15.18 (Debian 15.18-0+deb12u1)
@@ -18,22 +18,6 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
---
--- Name: public; Type: SCHEMA; Schema: -; Owner: postgres
---
-
--- *not* creating schema, since initdb creates it
-
-
-ALTER SCHEMA public OWNER TO postgres;
-
---
--- Name: SCHEMA public; Type: COMMENT; Schema: -; Owner: postgres
---
-
-COMMENT ON SCHEMA public IS '';
-
-
 SET default_tablespace = '';
 
 SET default_table_access_method = heap;
@@ -46,7 +30,8 @@ CREATE TABLE public.categories (
     id integer NOT NULL,
     name character varying(50) NOT NULL,
     creation_date timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
-    description character varying(250) NOT NULL
+    description character varying(250) NOT NULL,
+    link character varying(150) NOT NULL
 );
 
 
@@ -129,7 +114,8 @@ CREATE TABLE public.users (
     data_cadastro timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     password character varying(255) NOT NULL,
     type character varying(20) DEFAULT 'comum'::character varying,
-    about text
+    about character varying(500),
+    CONSTRAINT chk_sex CHECK (((sex)::text = ANY (ARRAY[('Masculino'::character varying)::text, ('Feminino'::character varying)::text])))
 );
 
 
@@ -203,16 +189,8 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
---
-
-REVOKE USAGE ON SCHEMA public FROM PUBLIC;
-GRANT ALL ON SCHEMA public TO nygts;
-
-
---
 -- PostgreSQL database dump complete
 --
 
-\unrestrict gFZJewU61gwFdgyNGC8idatSnt2HdLNUocBPtoeLUBAkagWdkYwfg4uVAuOwwYi
+\unrestrict QG2O5BBJM2IK7cMNly9JsF7TUBF0WWTzQDf17dzVjRXvNNrwkFKpVDl35a7N84d
 
