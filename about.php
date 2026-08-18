@@ -27,7 +27,7 @@ $profile = ($user_id > 0) ? '/pages/profile.php' : '/pages/login.php';
     <div class="logo-name">
 
       <a href="/">
-        <img src="/static/arphya_name_logowhite.png" alt="Arphya">
+        <img src="/static/arphya_logo.png" alt="Arphya">
       </a>
     </div>
 

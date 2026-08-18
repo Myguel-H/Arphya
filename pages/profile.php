@@ -23,7 +23,7 @@ $isAdmin = !empty($_SESSION['admin']);
     <header>
         <div class="logo-name-pages">
             <a href="/">
-                <img src="/static/arphya_name_logowhite.png" alt="Arphya">
+                <img src="/static/arphya_logo.png" alt="Arphya">
             </a>
         </div>
 

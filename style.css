@@ -229,8 +229,7 @@ border-left: 1px solid #e0e0e0;
     background-color: rgba(255, 107, 107, 0.12);
 }
 
-.search-icon button img   {
-    
+.search-icon img   {
     width: 20px;
     height: 20px;
 }

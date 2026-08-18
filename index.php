@@ -28,7 +28,7 @@ if ($user_id > 0) {
     <div class="logo-name">
 
       <a href="/">
-        <img src="/static/arphya_name_logowhite.png" alt="Arphya">
+        <img src="/static/arphya_logo.png" alt="Arphya">
       </a>
     </div>
 
@@ -67,19 +67,16 @@ if ($user_id > 0) {
         ?>
       </div>
 
-      <!--Input de busca-->
+       <!--Input de busca-->
       <div class="search-container">
         <form method="GET" action="/search.php">
         <input type="text" name="search" placeholder="O que é UDP ?" class="search-input">
-
-
         <label for="search" class="search-icon">
          <button class="search-icon" type="submit"><img src="/static/search-icon.webp" alt="Search Icon"></button>
         </label>
 
       </form>
       </div>
-
     </div>
   </header>
 
@@ -106,7 +103,7 @@ if ($user_id > 0) {
 
   <div class="main-wrapper">
     <div class="content">
-      <h2>Bem vindo, nesta aplicação você consegue encontrar conteúdo autentico para aprender sobre tecnologia</h2>
+      <h2>Importância do Open Source para o mundo</h2>
       <div class="content-text">
         <h3>Importancia do GNU/Linux no mundo</h3>
         <p>O GNU/Linux não é apenas um sistema operacional; é um pilar fundamental da infraestrutura tecnológica global.
@@ -178,17 +175,16 @@ if ($user_id > 0) {
       <?php include 'api-notice.php'; ?>
     </div>
 
-
     <!------------------------- F    O    O    T    E    R --------------------------->
 
   </div>
 
-    <footer class="footer-container">
-      <p>
-        <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
-      </p>
-    </footer>
-
 </body>
+
+<div class="footer-container">
+  <p>
+    <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
+  </p>
+</div>
 
 </html>
