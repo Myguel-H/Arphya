@@ -1,0 +1,18 @@
+TAGS PARA COMMITS
+
+feat: Nova funcionalidade para o sistema.
+fix: Correção de um bug ou comportamento incorreto.
+docs: Alterações em documentações (ex: README.md).
+style: Formatação de código que não altera o comportamento (ex: espaços).
+refactor: Mudança no código que não corrige bug nem adiciona funcionalidade.
+perf: Alteração de código com foco estritamente em desempenho.
+test: Criação, correção ou atualização de testes automatizados.
+chore: Tarefas repetitivas ou de manutenção (ex: atualizar pacotes).
+build: Modificações em sistemas de build ou dependências (ex: npm, webpack).
+ci: Mudanças em scripts de automação e deploy (ex: GitHub Actions).
+revert: Desfaz um commit anterior que gerou problemas.
+
+---
+REGRAS RÁPIDAS:
+1. Use letras minúsculas no tipo (feat, fix).
+2. Escreva a mensagem curta, sem ponto final.
