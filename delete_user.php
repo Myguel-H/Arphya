@@ -1,11 +1,11 @@
 <?php
 session_start();
-require_once 'config.php'; //pede ao config acessos
+require_once 'config.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') { //veio metodo POST de outro arquivo enviado para auth.php, se veio ele percorre o código 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $_POST['action'] ?? '';
 
-    if ($action == 'delete') { //Ação para deletar usuario 
+    if ($action == 'delete') {
         $id = $_POST['id'] ?? '';
 
         try {

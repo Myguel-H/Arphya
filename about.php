@@ -15,14 +15,11 @@ $profile = ($user_id > 0) ? '/pages/profile.php' : '/pages/login.php';
   <title>Sobre Arphya</title>
   <link class="logo-title" rel="icon" href="/static/logohosthome.webp" type="image/webp">
   <link rel="stylesheet" href="/style.css">
-  <!-- Splide carousel CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/css/splide.min.css">
-  <!-- Página usa o estilo padrão do projeto com pequenas regras via `.about-page` -->
 </head>
 
 <body>
 
-  <!--Logo e Nome-->
   <header>
     <div class="logo-name">
 
@@ -32,7 +29,6 @@ $profile = ($user_id > 0) ? '/pages/profile.php' : '/pages/login.php';
     </div>
 
     <div class="header-actions">
-      <!---Menu header-->
       <nav>
         <ul class="menu">
           <li><a href="/">Início</a></li>
@@ -43,7 +39,6 @@ $profile = ($user_id > 0) ? '/pages/profile.php' : '/pages/login.php';
       </nav>
 
       <div class="user-info">
-        <!--Icone de person-->
         <div class="person-icon"></div>
         <button class="btn-login" id="menu">
           <a href="<?= $profile ?>">
@@ -66,7 +61,6 @@ $profile = ($user_id > 0) ? '/pages/profile.php' : '/pages/login.php';
         ?>
       </div>
 
-      <!--Input de busca-->
       <div class="search-container">
         <form method="GET" action="/search.php">
           <input type="text" name="search" placeholder="O que é UDP ?" class="search-input">
@@ -159,7 +153,6 @@ $profile = ($user_id > 0) ? '/pages/profile.php' : '/pages/login.php';
         <div class="splide__slide">
           <img src="/static/tools/cloudflare.png" alt="Cloudflare">
         </div>
-        <!-- UTFPR slide (adicionar arquivo /static/tools/utfpr.png) -->
         <div class="splide__slide">
           <img src="/static/tools/utfpr.png" alt="UTFPR">
         </div>
@@ -181,7 +174,6 @@ $profile = ($user_id > 0) ? '/pages/profile.php' : '/pages/login.php';
         <div class="splide__slide">
           <img src="/static/tools/cloudflare.png" alt="Cloudflare">
         </div>
-        <!-- UTFPR slide (adicionar arquivo /static/tools/utfpr.png) -->
         <div class="splide__slide">
           <img src="/static/tools/utfpr.png" alt="UTFPR">
         </div>
@@ -190,21 +182,20 @@ $profile = ($user_id > 0) ? '/pages/profile.php' : '/pages/login.php';
   </div>
 
 
-  <!-- Splide JS and initialization -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.3/dist/js/splide.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var splide = new Splide('#carousel-empresas', {
         type: 'loop',
         perPage: 4,
-        perMove: 1,           // ← move 1 slide por vez, fica mais fluido com o loop
+        perMove: 1,
         gap: '1.5rem',
         autoplay: true,
         interval: 3000,
         speed: 1200,
         easing: 'cubic-bezier(0.25, 0.1, 0.25, 1)',
         pauseOnHover: true,
-        pagination: false,    // ← com loop + duplicatas, a paginação por bolinhas fica confusa; desative
+        pagination: false,
         arrows: false,
         breakpoints: {
           1200: { perPage: 5 },

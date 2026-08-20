@@ -23,8 +23,6 @@ if ($user_id > 0) {
 
 <body>
 
-    <!--------------------------- H    E    A    D    E    R --------------------------->
-    <!--Logo e Nome-->
     <header>
         <div class="logo-name">
             <a href="/">
@@ -33,7 +31,6 @@ if ($user_id > 0) {
         </div>
 
         <div class="header-actions">
-            <!---Menu header-->
             <nav>
                 <ul class="menu">
                     <li><a href="/">Início</a></li>
@@ -44,7 +41,6 @@ if ($user_id > 0) {
             </nav>
 
             <div class="user-info">
-                <!--Icone de person-->
                 <div class="person-icon"></div>
                 <button class="btn-login" title="">
                     <a href="<?= $profile ?>" title="Entrar">
@@ -67,7 +63,6 @@ if ($user_id > 0) {
                 ?>
             </div>
 
-            <!--Input de busca-->
             <div class="search-container">
                 <form method="GET" action="/search.php">
                     <input type="text" name="search" placeholder="O que é UDP ?" class="search-input">
@@ -80,8 +75,20 @@ if ($user_id > 0) {
         </div>
     </header>
 
+    <nav class="sumary">
+        <h3>Sumário</h3>
+        <ul>
+            <li><a href="#secao1">Historia do TCP/IP</a></li>
+            <li><a href="#secao2">Desenvolvimento do TCP/IP</a></li>
+             <li><a href="#secao3">Funcionamento do TCP e IP</a></li>
+            <li><a href="secao1">Historia do TCP/IP</a></li>
+            <li><a href="secao1">Historia do TCP/IP</a></li>
+
+        </ul>
+    </nav>
+
     <div class="publis-content">
-        <h2>Protocolo TCP/IP</h2>
+        <h2 id="secao1">Protocolo TCP/IP</h2>
 
         <div class="content">
             <h3>A história um pouco antes do protocolo mais importante do mundo, o TCP/IP</h3>
@@ -132,7 +139,7 @@ if ($user_id > 0) {
                 imediata para substituição do protocolo.
             </p>
 
-            <h3>Surgimento do modelo TCP/IP</h3>
+            <h3 id="secao2" >Surgimento do modelo TCP/IP</h3>
 
             <p>
                 O TCP/IP teve seus primeiros passos em 1969 pelo DARPA, e era apenas um complemento/recurso do projeto
@@ -199,7 +206,7 @@ if ($user_id > 0) {
                     Cerf (Direita)</p>
             </div>
 
-            <h3>Como os protocolos TCP e IP funcionam?</h3>
+            <h3 id="secao3" >Como os protocolos TCP e IP funcionam?</h3>
 
             <p>
                 O protocolo TCP funciona de maneira similar a um entregador de cartas, responsável por capturar a carta,
@@ -245,12 +252,10 @@ if ($user_id > 0) {
                     <img src="/static/pubs-img/checksum.jpg" alt="funcionamento-checksum">
                     <p style="font-style: italic; font-size: 10px;">Funcionamento do checksum</p>
 
-                    <!-- ÂNCORA PARA TCP -->
                     <span id="pub-img-tcp"></span>
                     <img src="/static/pubs-img/fluxo-tcp.png" alt="Fluxo-do-protocolo-tcp">
                     <p style="font-style: italic; font-size: 10px;">Fluxo do protocolo TCP</p>
 
-                    <!-- ÂNCORA PARA IP -->
                     <span id="pub-img-ip"></span>
                     <img src="/static/pubs-img/fluxo-ip.png" alt="Fluxo-do-protocolo-ip-redes">
                     <p style="font-style: italic; font-size: 10px;">Fluxo do protocolo IP até o destino</p>

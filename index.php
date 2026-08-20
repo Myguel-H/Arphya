@@ -23,7 +23,6 @@ if ($user_id > 0) {
 <body>
 
   <!--------------------------- H    E    A    D    E    R --------------------------->
-  <!--Logo e Nome-->
   <header>
     <div class="logo-name">
 
@@ -33,7 +32,6 @@ if ($user_id > 0) {
     </div>
 
     <div class="header-actions">
-      <!---Menu header-->
       <nav>
         <ul class="menu">
           <li><a href="/about.php">Sobre</a></li>
@@ -44,7 +42,6 @@ if ($user_id > 0) {
       </nav>
 
       <div class="user-info">
-        <!--Icone de person-->
         <div class="person-icon"></div>
         <button class="btn-login" id="menu">
           <a href="<?= $profile ?>">
@@ -67,7 +64,6 @@ if ($user_id > 0) {
         ?>
       </div>
 
-       <!--Input de busca-->
       <div class="search-container">
         <form method="GET" action="/search.php">
         <input type="text" name="search" placeholder="O que é UDP ?" class="search-input">
@@ -81,7 +77,6 @@ if ($user_id > 0) {
   </header>
 
   <!------------------------- B    O    D    Y --------------------------->
-  <!--Table sidebar category/down-header-->
   <table class="sidebar-down-header">
     <tbody>
       <tr>
@@ -160,7 +155,6 @@ if ($user_id > 0) {
       </div>
     </div>
 
-    <!--Card da descrição do GNU/Linux-->
     <div class="description-linux">
       <div class="description-name-card">GNU/Linux</div>
       <img src="/static/gnulinux-img.svg.png" alt="Gnu/Linux">
@@ -170,7 +164,6 @@ if ($user_id > 0) {
       </div>
     </div>
 
-    <!--Card API de notícias-->
     <div class="notice-container">
       <?php include 'api-notice.php'; ?>
     </div>

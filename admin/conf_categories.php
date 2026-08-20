@@ -19,8 +19,6 @@ $isAdmin = !empty($_SESSION['admin']);
 
 <body>
 
-    <!--------------------------- H    E    A    D    E    R --------------------------->
-    <!--Logo e Nome-->
     <header>
         <div class="logo-name">
             <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
@@ -30,7 +28,6 @@ $isAdmin = !empty($_SESSION['admin']);
         </div>
 
         <div class="header-actions">
-            <!---Menu header-->
             <nav>
                 <ul class="menu">
                     <li><a href="/">Início</a></li>
@@ -40,7 +37,6 @@ $isAdmin = !empty($_SESSION['admin']);
                 </ul>
             </nav>
 
-            <!--Icone de person-->
             <button class="btn-login" id="menu">
                 <a href="/pages/profile.php">
                     <img src="/static/person-icon.png" alt="icon-login">
@@ -62,7 +58,6 @@ $isAdmin = !empty($_SESSION['admin']);
         </div>
     </header>
 
-    <!------------------------- B    O    D    Y --------------------------->
 
     <div class="sidebar-lateral">
         <nav>
@@ -87,7 +82,6 @@ $isAdmin = !empty($_SESSION['admin']);
     </div>
 
     <div class="tables admin-categories-table">
-        <!--Tabela categorias-->
         <div class="categories-list with-actions">
             <table>
                 <thead>
@@ -131,6 +125,5 @@ $isAdmin = !empty($_SESSION['admin']);
         </div>
     </div>
 
-    <!------------------------- F    O    O    T    E    R --------------------------->
 
 </body>

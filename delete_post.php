@@ -5,7 +5,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $_POST['action'] ?? '';
 
-    if ($action == 'delete') { //Ação para registro de usuario 
+    if ($action == 'delete') {
         $id = $_POST['id'] ?? '';
 
         try {

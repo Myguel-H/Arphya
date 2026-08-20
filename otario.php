@@ -11,8 +11,6 @@
 
 <body>
 
-    <!--------------------------- H    E    A    D    E    R --------------------------->
-    <!--Logo e Nome-->
     <header>
         <div class="logo-name">
             <img class="logo-icon" src="/static/logohosthome.webp" alt="Logo">
@@ -22,7 +20,6 @@
         </div>
     </header>
 
-    <!------------------------- B    O    D    Y --------------------------->
 
     <main class="restricted-container">
         <h1>Acesso Restrito</h1>
@@ -34,7 +31,6 @@
         <a href="/">Voltar para a página inicial</a>
     </main>
 
-    <!------------------------- F    O    O    T    E    R --------------------------->
 
     <footer class="footer-container">
         <p>

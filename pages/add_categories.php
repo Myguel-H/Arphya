@@ -20,7 +20,6 @@ $isAdmin = !empty($_SESSION['admin']);
 <body>
 
     <!--------------------------- H    E    A    D    E    R --------------------------->
-    <!--Logo e Nome-->
     <header>
         <div class="logo-name-pages">
             <a href="/">
@@ -29,7 +28,6 @@ $isAdmin = !empty($_SESSION['admin']);
         </div>
 
         <div class="header-actions">
-            <!---Menu header-->
             <nav>
                 <ul class="menu">
                     <li><a href="/">Início</a></li>
@@ -39,7 +37,6 @@ $isAdmin = !empty($_SESSION['admin']);
             </nav>
 
             <div class="user-info">
-                <!--Icone de person-->
                 <div class="person-icon"></div>
                 <button class="btn-login" id="menu">
                     <a href="/pages/profile.php">
@@ -106,7 +103,6 @@ $isAdmin = !empty($_SESSION['admin']);
         </form>
 
         <div class="tables">
-            <!--Tabela categorias-->
             <div class="categories-list">
                 <table>
                     <thead>

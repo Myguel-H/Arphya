@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header('Location: /pages/edit_user.php?error=1');
             exit();
         }
-//verifica se as variaveis estao vazias, se estiver eles mandam a propria variavel, assim nao deixando um dado em branco
         $name = !empty($_POST['name']) ? $_POST['name'] : $user['name'];
         $email = !empty($_POST['email']) ? $_POST['email'] : $user['email'];
         $age = !empty($_POST['age']) ? $_POST['age'] : $user['age'];

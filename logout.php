@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-session_unset(); // remove todas as variaveis
+session_unset();
 
-session_destroy(); // destroi a sessão no servidor
+session_destroy();
 
 header("Location: /");
 exit();

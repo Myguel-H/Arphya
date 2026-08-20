@@ -8,7 +8,6 @@ if (!empty($termo)) {
     try {
         $termo_busca = "%$termo%";
 
-        // BUSCA EM PUBLICAÇÕES - title OU about OU resume OU content
         $stmt_pub = $pdo->prepare("
             SELECT id, title, resume, about, content, creation_date as created_at, 'publication' as tipo 
             FROM publications 
@@ -17,7 +16,6 @@ if (!empty($termo)) {
         $stmt_pub->execute([$termo_busca, $termo_busca, $termo_busca, $termo_busca]);
         $publicacoes = $stmt_pub->fetchAll();
 
-        // BUSCA EM CATEGORIAS
         $stmt_cat = $pdo->prepare("
             SELECT id, name, description, link, 'category' as tipo 
             FROM categories 

@@ -92,7 +92,6 @@ $isAdmin = !empty($_SESSION['admin']);
             ?>
         <div class="update-user-card">
 
-            <!-- coluna esquerda: upload de avatar -->
                 <div class="update-user-avatar">
                     <form action="../upload_avatar.php" method="POST" enctype="multipart/form-data">
                         <label class="file-label" for="avatar-input" id="avatar-label">
@@ -104,7 +103,6 @@ $isAdmin = !empty($_SESSION['admin']);
                     </form>
                 </div>
 
-                <!-- coluna direita: dados do usuário -->
                 <div class="update-user-fields">
                     <form action="../update_user.php" method="POST">
                         <input type="hidden" name="action" value="update">

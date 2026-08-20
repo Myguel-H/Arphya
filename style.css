@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -39,7 +38,6 @@ main,
     flex: 1;
 }
 
-/* header principal */
 header {
     display: flex;
     align-items: center;
@@ -49,10 +47,9 @@ header {
     border-bottom: 1px solid #e0e0e0;
     font-family: 'Inter', sans-serif;
     position: relative;
-    height: 90px; /* define uma altura fixa! */
+    height: 90px;
 }
 
-/* logo + nome */
 .logo-name {
     display: flex;
     align-items: center;
@@ -74,12 +71,11 @@ header {
 
 
 
-/* A imagem não pode ultrapassar a altura do header */
 .logo-name-pages a img {
-    height: 80px; /* altura desejada, menor que a do header */
+    height: 80px;
     width: auto;
-    max-height: 100%; /* garante que não ultrapasse o header */
-    object-fit: contain; /* mantém proporção */
+    max-height: 100%;
+    object-fit: contain;
 }
 
 
@@ -100,7 +96,6 @@ header {
     margin: 0;
 }
 
-/* header actions group */
 .header-actions {
     display: flex;
     align-items: center;
@@ -143,12 +138,10 @@ border-left: 1px solid #e0e0e0;
     transition: color 0.3s ease;
 }
 
-/* efeito hover para a lista do menu -header */
 .menu li a:hover {
     color: #2563eb;
 }
 
-/* botão do ícone de usuário */
 .btn-login {
     background: none;
     border: none;
@@ -167,7 +160,6 @@ border-left: 1px solid #e0e0e0;
     transform: scale(1.05);
 }
 
-/* user info wrapper to separate profile from the rest of the header */
 .user-info {
     display: flex;
     align-items: center;
@@ -244,7 +236,6 @@ border-left: 1px solid #e0e0e0;
     height: 20px;
 }
 
-/* ======================== SIDEBAR DOWN HEADER ======================== */
 .sidebar-down-header {
     border-collapse: separate;
     border-spacing: 0;
@@ -313,7 +304,6 @@ border-left: 1px solid #e0e0e0;
     transform: translateY(-3px);
 }
 
-/* ======================== MAIN WRAPPER ======================== */
 .main-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -324,7 +314,6 @@ border-left: 1px solid #e0e0e0;
     align-items: flex-start;
 }
 
-/* ======================== CONTENT ======================== */
 .content {
     flex: 1;
 }
@@ -395,7 +384,6 @@ border-left: 1px solid #e0e0e0;
     opacity: 0.8;
 }
 
-/* ======================== SIDEBAR LATERAL — ESTILO DASHBOARD (referência) ======================== */
 :root {
     --sidebar-accent: #6c4ef5;
     --sidebar-accent-bg: #f1edfe;
@@ -448,7 +436,6 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
-/* ======================== NAV / LISTA DE ITENS ======================== */
 
 .sidebar-actions {
     list-style: none;
@@ -599,7 +586,6 @@ border-left: 1px solid #e0e0e0;
     color: var(--sidebar-text-muted);
 }
 
-/* Ajusta o conteúdo ao lado da sidebar para a nova largura (260px) */
 @media (min-width: 1100px) {
     .sidebar-lateral + .add-publication,
     .sidebar-lateral + .profile-user,
@@ -622,7 +608,6 @@ border-left: 1px solid #e0e0e0;
     position: fixed;
     right: 3.0rem;
     bottom: 10rem;
-    /* positioned above the fixed footer */
     width: 200px;
     min-width: 180px;
     background-color: #ffffff;
@@ -672,7 +657,6 @@ border-left: 1px solid #e0e0e0;
     transform: translateY(-3px);
 }
 
-/* ======================== PROFILE USER ======================== */
 .profile-user {
     display: flex;
     align-items: center;
@@ -829,7 +813,6 @@ border-left: 1px solid #e0e0e0;
     white-space: normal;
 }
 
-/* EDIT PROFILE BUTTON */
 .data-user button {
     background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
     border: none;
@@ -965,7 +948,6 @@ border-left: 1px solid #e0e0e0;
     transition: color 0.3s ease;
 }
 
-/* efeito hover para a lista do menu -header */
 .content-text a:hover {
     color: #2563eb;
 }
@@ -974,7 +956,6 @@ border-left: 1px solid #e0e0e0;
     margin-bottom: 0;
 }
 
-/* ======================== DESCRIPTION LINUX CARD ======================== */
 .description-linux {
     flex: 0 0 320px;
     background-color: #f9f9f9;
@@ -1041,7 +1022,6 @@ border-left: 1px solid #e0e0e0;
     text-align: justify;
 }
 
-/* ======================== NOTICE CONTAINER ======================== */
 .notice-container {
     flex: 1 1 100%;
     order: 3;
@@ -1117,7 +1097,6 @@ border-left: 1px solid #e0e0e0;
     text-decoration: underline;
 }
 
-/* ======================== FOOTER ======================== */
 .footer-container {
     display: flex;
     z-index: 1000;
@@ -1127,9 +1106,8 @@ border-left: 1px solid #e0e0e0;
     padding: 30px 40px;
     width: 100%;
     
-    /* ADICIONE ESTAS DUAS LINHAS ABAIXO */
     margin-top: auto; 
-    box-sizing: border-box; /* Evita que o padding de 40px crie barra de rolagem horizontal */
+    box-sizing: border-box;
 }
 
 .footer-container p {
@@ -1141,14 +1119,13 @@ border-left: 1px solid #e0e0e0;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 100%; /* Garante que o texto fique centralizado no meio da tela */
+    width: 100%;
 }
 
 .footer-container img {
     width: 16px;
     height: 16px;
 }
-/* ======================== USER LIST & PUBLICATION LIST ======================== */
 
 .user-list, .publication-list, .categories-list {
     display: block;
@@ -1163,7 +1140,6 @@ border-left: 1px solid #e0e0e0;
     z-index: 1;
 }
 
-/* Ensure conf_categories uses the same max-width as add_categories category list */
 .tables .categories-list {
     width: 100%;
     max-width: 1400px;
@@ -1227,7 +1203,6 @@ border-left: 1px solid #e0e0e0;
     table-layout: fixed;
 }
 
-/* Apenas publication-list com altura fixa */
 .publication-list tbody tr {
     height: 50px !important;
     max-height: 50px !important;
@@ -1276,7 +1251,6 @@ border-left: 1px solid #e0e0e0;
     text-overflow: ellipsis !important;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 1024px) {
     .user-list table, .publication-list table, .categories-list table {
         font-size: 0.9rem;
@@ -1484,7 +1458,6 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
-/* ======================== LOGIN & REGISTER PAGES ======================== */
 .container-account {
     display: flex;
     flex-direction: column;
@@ -1515,7 +1488,6 @@ border-left: 1px solid #e0e0e0;
     letter-spacing: -0.5px;
 }
 
-/* Mensagens de erro e sucesso */
 .error {
     background-color: #fee;
     border: 1px solid #fcc;
@@ -1535,7 +1507,6 @@ border-left: 1px solid #e0e0e0;
     color: #3c3;
 }
 
-/* Formulário */
 .form-box {
     display: flex;
     flex-direction: column;
@@ -1583,7 +1554,6 @@ border-left: 1px solid #e0e0e0;
     color: #a0a0a0;
 }
 
-/* Botão de envio */
 .btn {
     padding: 14px 24px;
     background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
@@ -1615,7 +1585,6 @@ border-left: 1px solid #e0e0e0;
     transform: none;
 }
 
-/* Link para cadastro/login */
 .link-account {
     text-align: center;
     color: #7f7f7f;
@@ -1651,7 +1620,6 @@ border-left: 1px solid #e0e0e0;
     width: 100%;
 }
 
-/* Responsividade */
 @media (max-width: 480px) {
     .container-account {
         padding: 20px 12px;
@@ -1700,7 +1668,6 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
-/* ======================== PUBLICATION & ADD PUBLICATION PAGES ======================== */
 
 .add-publication {
     width: 100%;
@@ -1715,7 +1682,6 @@ border-left: 1px solid #e0e0e0;
     z-index: 10;
 }
 
-/* Center form and categories table and make them the same max width inside .add-publication */
 .add-publication .categories-list {
     width: 100%;
     max-width: 100%;
@@ -1736,7 +1702,6 @@ border-left: 1px solid #e0e0e0;
     text-decoration: none;
 }
 
-/* ======================== FORM STYLE ======================== */
 
 .add-publication form {
     background-color: #ffffff;
@@ -1855,7 +1820,6 @@ border-left: 1px solid #e0e0e0;
     padding: 8px;
 }
 
-/* ======================== BUTTON STYLES ======================== */
 
 .btn {
     padding: 14px 28px;
@@ -1884,7 +1848,6 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 4px 16px rgba(37, 99, 235, 0.14);
 }
 
-/* ======================== PUBLICATIONS CONTAINER ======================== */
 
 .pub-container {
     display: grid;
@@ -1986,7 +1949,6 @@ border-left: 1px solid #e0e0e0;
     font-weight: 600;
 }
 
-/* ======================== CREATE PUBLICATION BUTTON ======================== */
 
 .btn-publi {
     position: fixed;
@@ -2027,7 +1989,6 @@ border-left: 1px solid #e0e0e0;
     transform: translateY(-2px);
 }
 
-/* ======================== RESPONSIVE STYLES ======================== */
 
 @media (max-width: 1200px) {
     .add-publication {
@@ -2170,7 +2131,6 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
-/* ======================== TIMELINE PAGE SPECIFIC STYLES ======================== */
 
 .timeline-page {
     width: 100% !important;
@@ -2181,7 +2141,6 @@ border-left: 1px solid #e0e0e0;
     min-height: auto !important;
 }
 
-/* ======================== ABOUT PAGE MINIMAL STYLES ======================== */
 .about-page {
     max-width: 920px;
     margin: 40px auto;
@@ -2238,7 +2197,6 @@ border-left: 1px solid #e0e0e0;
     text-decoration: underline;
 }
 
-/* Splide carousel tweaks */
 .splide {
     width: 100%;
     max-width: 100%;
@@ -2326,7 +2284,6 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 18px 48px rgba(15, 15, 15, 0.12) !important;
 }
 
-/* Timeline Responsive */
 @media (max-width: 1200px) {
     .timeline-page {
         padding: 0 1.5rem !important;
@@ -2371,7 +2328,6 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
-/* ======================== RESTRICTED ACCESS PAGE ======================== */
 
 .restricted-container {
     display: flex;
@@ -2450,7 +2406,6 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
-/* ======================== TABLE DELETE BUTTONS ======================== */
 
 .user-list table th:last-child,
 .publication-list table th:last-child {
@@ -2509,7 +2464,6 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(221, 30, 30, 0.2);
 }
 
-/* Delete button styles for categories-list (same as user-list) */
 .categories-list table button,
 .categories-list table button:nth-child(1) {
     padding: 8px 16px;
@@ -2538,7 +2492,6 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(221, 30, 30, 0.2);
 }
 
-/* ======================== TABLE COLUMN ALIGNMENT ======================== */
 
 .user-list tbody tr:hover,
 .publication-list tbody tr:hover {
@@ -2552,7 +2505,6 @@ border-left: 1px solid #e0e0e0;
     display: table-cell;
 }
 
-/* Default categories-list column widths (used where there is no Actions column) */
 .categories-list table {
     table-layout: fixed;
 }
@@ -2575,7 +2527,6 @@ border-left: 1px solid #e0e0e0;
     min-width: calc(60% + 50px);
 }
 
-/* Admin variant: tables that include an Actions column */
 .categories-list.with-actions table {
     table-layout: fixed;
 }
@@ -2602,7 +2553,6 @@ border-left: 1px solid #e0e0e0;
     max-width: 15%;
 }
 
-/* ======================== EDIT USER PAGE ======================== */
 
 .update-user {
     display: flex;
@@ -2611,7 +2561,7 @@ border-left: 1px solid #e0e0e0;
     min-height: calc(100vh - 300px);
     padding: 32px 20px;
     font-family: 'Inter', sans-serif;
-    padding-right: 250px; /* compensa a sidebar fixa, igual .profile-user */
+    padding-right: 250px;
 }
 
 .update-user-card {
@@ -2628,7 +2578,6 @@ border-left: 1px solid #e0e0e0;
     animation: slideIn 0.4s ease-out;
 }
 
-/* ---- coluna esquerda: avatar + upload ---- */
 .update-user-avatar {
     grid-column: 1 / 2;
     display: flex;
@@ -2645,7 +2594,6 @@ border-left: 1px solid #e0e0e0;
     width: 100%;
 }
 
-/* esconde o input file nativo e usa uma label estilizada no lugar */
 .update-user-avatar input[type="file"] {
     display: none;
 }
@@ -2690,7 +2638,6 @@ border-left: 1px solid #e0e0e0;
     font-size: 0.92rem;
 }
 
-/* ---- coluna direita: dados do formulário ---- */
 .update-user-fields {
     grid-column: 2 / 3;
 }
@@ -2701,7 +2648,6 @@ border-left: 1px solid #e0e0e0;
     gap: 18px;
 }
 
-/* reaproveita o padrão de .insert-publication label/input/select */
 .update-user-fields label {
     font-weight: 600;
     color: #1a1a1a;
@@ -2745,9 +2691,8 @@ border-left: 1px solid #e0e0e0;
     color: #a8a8a8;
 }
 
-/* Aumenta a área do campo "Sobre você" para ocupar espaço abaixo quando disponível */
 .update-user-fields textarea {
-    min-height: 220px; /* ocupa a parte debaixo reservada */
+    min-height: 220px;
     resize: vertical;
 }
 
@@ -2791,7 +2736,6 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 4px 16px rgba(37, 99, 235, 0.14);
 }
 
-/* ---- responsividade, mesmo padrão do .data-user ---- */
 @media (max-width: 768px) {
     .update-user {
         min-height: auto;
@@ -2827,14 +2771,12 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
-/* corrige o padding-right da sidebar em telas menores que 1100px, quando ela deixa de ser fixa */
 @media (max-width: 1100px) {
     .update-user {
         padding-right: 20px;
     }
 }
 
-/* ======================== RETURN PAGE SEARCH STYLE ======================== */
 
 body {
     background-color: #f4f4f5;
@@ -2928,7 +2870,6 @@ body {
     }
 }
 
-/* Carrossel - altura 60px, largura 100% */
 .splide {
     width: 100%;
     max-width: 100%;
@@ -2959,7 +2900,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Paginação */
 .splide__pagination {
     bottom: -10px;
 }
