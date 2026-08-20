@@ -27,7 +27,6 @@ if ($user_id > 0) {
     <!--Logo e Nome-->
     <header>
         <div class="logo-name">
-
             <a href="/">
                 <img src="/static/arphya_logo.png" alt="Arphya">
             </a>
@@ -76,16 +75,13 @@ if ($user_id > 0) {
                         <button class="search-icon" type="submit"><img src="/static/search-icon.webp"
                                 alt="Search Icon"></button>
                     </label>
-
                 </form>
             </div>
         </div>
-
-
     </header>
 
     <div class="publis-content">
-        <h1>Protocolo TCP/IP</h1>
+        <h2>Protocolo TCP/IP</h2>
 
         <div class="content">
             <h3>A história um pouco antes do protocolo mais importante do mundo, o TCP/IP</h3>
@@ -93,8 +89,7 @@ if ($user_id > 0) {
             <p>
                 Historicamente, entendendo um pouco, tudo começou alguns anos depois do início da Guerra Fria
                 (1947–1991). Por volta da década de 1950, foi criado um órgão de pesquisa pelo Departamento de
-                Defesa
-                dos E.U.A., chamado de ARPA, hoje conhecido como
+                Defesa dos E.U.A., chamado de ARPA, hoje conhecido como
                 <a title="Saber mais sobre o DARPA" href="/">DARPA</a>
                 (Defense Advanced Research Projects Agency). Uma agência americana que visava inicialmente ao
                 desenvolvimento de projetos e tecnologias avançadas para a área militar.
@@ -121,8 +116,8 @@ if ($user_id > 0) {
 
             <p>
                 O NCP era "revolucionário" para a época, pois as máquinas já podiam se comunicar a longas
-                distâncias.
-                Porém, existiam muitos limites. Alguns deles eram: funcionava apenas dentro de uma rede "interna",
+                distâncias. Porém, existiam muitos limites. Alguns deles eram: funcionava apenas dentro de uma rede
+                "interna",
                 não era aberta ao público e apenas computadores específicos podiam se comunicar.
                 Além disso, softwares diferentes muitas vezes não conseguiam se comunicar entre si e dependiam
                 de hardwares muito específicos para transmitir as mensagens, como os IMPs
@@ -137,39 +132,34 @@ if ($user_id > 0) {
                 imediata para substituição do protocolo.
             </p>
 
-
-
             <h3>Surgimento do modelo TCP/IP</h3>
 
             <p>
-                O TCP/IP teve seus priemiro passos em 1969 pelo DARPA, e era apenas um complementou/recurso do projeto
-                ARPANET,
-                hoje em dia muitos entende e ve ele como um protocolo, nao esta errado ! Porem ele mais é um modelo do
-                que um protoclo
-                por si só, pois ele utiliza dois protoclos, TCP -
-            <p style="font-style: italic;">Protocol Comunication Transport</p>
-            e IP - <p style="font-style: italic;">Protocol Internet</p> assim surgindo da junção desses
-            dois protocolos o
-            que conhecemos hoje como TCP/IP. Ele foi arquitetado com uma maniera genial chamada de <a href="/">packet
-                switching</a>
-            (<span style="font-style: italic;">comutação de pacotes</span>) que seguia uma passo simples,
-            enviava um pacote individualmente pela rede, asssim se caso um pacote for "destruido" ele seguiria
-            com outras rotas, assim tambem buscando a rota mais rapida ate o destinatário. <strong>Curiosidade</strong>:
-            O objetivo principal surgiu
-            do temor de acontecer uma guerra nuclear, entao assim os cientistas procuravam um metodo que mesmo em caso
-            de guerra,
-            com a queda da comunicação eles conseguissem se comunicar.
+                O TCP/IP teve seus primeiros passos em 1969 pelo DARPA, e era apenas um complemento/recurso do projeto
+                ARPANET.
+                Hoje em dia muitos entendem e veem ele como um protocolo, não está errado! Porém ele mais é um modelo do
+                que um protocolo por si só, pois ele utiliza dois protocolos: TCP -
+                <span style="font-style: italic;">Protocol Comunication Transport</span>
+                e IP - <span style="font-style: italic;">Protocol Internet</span>, assim surgindo da junção desses
+                dois protocolos o que conhecemos hoje como TCP/IP. Ele foi arquitetado com uma maneira genial chamada de
+                <a href="/">packet switching</a>
+                (<span style="font-style: italic;">comutação de pacotes</span>) que seguia um passo simples:
+                enviava um pacote individualmente pela rede, assim se caso um pacote for "destruído" ele seguiria
+                com outras rotas, assim também buscando a rota mais rápida até o destinatário.
+                <strong>Curiosidade</strong>:
+                O objetivo principal surgiu do temor de acontecer uma guerra nuclear, então assim os cientistas
+                procuravam um método que mesmo em caso de guerra, com a queda da comunicação eles conseguissem se
+                comunicar.
             </p>
 
             <p>
-                Alguns anos depois do surgimentos do modelo ele se tornou conhecido entre a comunidade, em 1972 ja era
-                conhecido mundialmente.
-                Em 1974 houve a 'primeira' apresentação oficial sobre o modelo TCP/IP escrito por
-                Vint Cerf e Robert Kahn, apresentando que conceito do modelo TCP/IP demonstoru que ele poderia
+                Alguns anos depois do surgimento do modelo ele se tornou conhecido entre a comunidade, em 1972 já era
+                conhecido mundialmente. Em 1974 houve a 'primeira' apresentação oficial sobre o modelo TCP/IP escrito
+                por
+                Vint Cerf e Robert Kahn, apresentando que o conceito do modelo TCP/IP demonstrou que ele poderia
                 funcionar em diferentes redes e suportar múltiplas interconexões, algo muito superior para as
-                arquiteturas e modelos da epoca.
+                arquiteturas e modelos da época.
             </p>
-
 
             <div class="publi-destaque">
                 <img src="/static/pubs-img/plaque-TCP-IP.png" alt="Placa de reconhecimento do TCP/IP">
@@ -179,82 +169,225 @@ if ($user_id > 0) {
                 </p>
             </div>
 
-            <p>Originalmente não havia TCP nem IP, os dois foram sendo arqutietados durante s anos de 1969 e 1974
-                onde DARPA financiava o estudo e desenvolvimentos dessas tecnologias e protocolos, com seus cientistas
-                chefes
-                Vint Cerf e Robert Kahn, eles trbalhavam em conjunto com o grupo internacional de pesquisa e
-                desenvolvimentos da internet
-                INWG -
-            <p style="font-style: italic">International Network Working Group</p> aos quaisa colaboravam com ideias
-            e desenhos de arquitetura para o desnvolvimetnos do TCP/IP. Na epoca, eles tinha quase tudo pronto
-            o modelo, desnhos, ideias e dinheiro para criar, entaoa em 1972 DARPA contratou a BBN Technologies,
-            a universidadeStanford e a UNiversiade de College London para
-            aplicar tudo isso em hardwar. Assim foram desenvolvidas algumas versoes operacionas do protoloco em diversas
-            plataformas.
-            Quatro versoes foram desenvolvidas durante 7 anos com diferentes versoes, sendo elas TCP v1, TCP v2, TCP v3,
-            v3 IP e o
-            finalista TCP / IP v4 sendo o unico continuado e em uso ate os dias de hoje. Inicialmente os cientistas dos
-            orgaos acima
-            criar tudo em um, a primeira versao foi chamada de TCP V1 e era repsonvael por fazer tudo, desde
-            enviou/entrega e roteamento
-            sozinho, ainda nao havia IP. A versao TCP V2 era utilizado apenas testes praicos sem muita diferenca. NAs
-            versoes TCP v3 e IP v3
-            os pesuqisadores perceberam que nao compensava sobrecarregar um protocolo com roteamente e checagem de erros
-            era ineficiente.
-            ASsim em 1978 eles dividiram as funcoes em dois protoclos, sendo o IP para rteamente e endereçamento e o TCP
-            para transmissao do
-            pacote de ponta aponta. Assim entre 1978 e 1980 eles conseguiram estabilizar esses dois protoclos unido-os
-            em "um só", ficando conhecido como
-            TCP/IP v4. E em 1º janeiro de 1983 foi impementada na rrede ARPANET tornanod mundial e padroznizando a
-            internet com o TCP/IP.
+            <p>
+                Originalmente não havia TCP nem IP, os dois foram sendo arquitetados durante os anos de 1969 e 1974
+                onde a DARPA financiava o estudo e desenvolvimento dessas tecnologias e protocolos, com seus cientistas
+                chefes Vint Cerf e Robert Kahn. Eles trabalhavam em conjunto com o grupo internacional de pesquisa e
+                desenvolvimento da internet INWG -
+                <span style="font-style: italic;">International Network Working Group</span> aos quais colaboravam com
+                ideias
+                e desenhos de arquitetura para o desenvolvimento do TCP/IP. Na época, eles tinham quase tudo pronto:
+                o modelo, desenhos, ideias e dinheiro para criar. Então em 1972 a DARPA contratou a BBN Technologies,
+                a Universidade de Stanford e a Universidade de College London para aplicar tudo isso em hardware.
+                Assim foram desenvolvidas algumas versões operacionais do protocolo em diversas plataformas.
+                Quatro versões foram desenvolvidas durante 7 anos com diferentes versões, sendo elas TCP v1, TCP v2,
+                TCP v3, v3 IP e o finalista TCP/IP v4 sendo o único continuado e em uso até os dias de hoje.
+                Inicialmente os cientistas dos órgãos acima criaram tudo em um, a primeira versão foi chamada de TCP V1
+                e era responsável por fazer tudo, desde envio/entrega e roteamento sozinho, ainda não havia IP.
+                A versão TCP V2 era utilizada apenas testes práticos sem muita diferença. Nas versões TCP v3 e IP v3
+                os pesquisadores perceberam que não compensava sobrecarregar um protocolo com roteamento e checagem de
+                erros, era ineficiente. Assim em 1978 eles dividiram as funções em dois protocolos, sendo o IP para
+                roteamento e endereçamento e o TCP para transmissão do pacote de ponta a ponta. Assim entre 1978 e 1980
+                eles conseguiram estabilizar esses dois protocolos unindo-os em "um só", ficando conhecido como
+                TCP/IP v4. E em 1º de janeiro de 1983 foi implementada na rede ARPANET tornando mundial e padronizando a
+                internet com o TCP/IP.
             </p>
 
             <div class="publi-destaque">
                 <img src="/static/pubs-img/vicent_e_robert.jpg" alt="Foto_de_Vicent_e_Robert">
-                <p style="font-style: italic; font-size: 10px;">Criador do modelo TCP/IP, Roberth Kahn (esquerda) e Vint
+                <p style="font-style: italic; font-size: 10px;">Criador do modelo TCP/IP, Robert Kahn (esquerda) e Vint
                     Cerf (Direita)</p>
             </div>
 
-            <h3>Como os protocolos TCP e IP funcionam ?</h3>
-            <p>
-                O protocolos TCP funciona de maneira similar a um entregador de cartas, repsonavel por capturar a carta,
-                caminhar ate o destinario entregar a carta, receber a carta de novo e devolver a carta aos correios com
-                as informção do
-                processo. É o apadrõa de comunicção mais utilizado no mundo e o padrao na internet, o mesmo define as
-                regras de internet
-                definidos pela IETF -
-            <p style="font-style: italic;">Internet Engineering Task Force</p>. <br><br />
-            O TCP organiza os dados para
-            que possam ser transmitdos entre um servior e um cleinte, garantindo a integridade dos pacotes a serem
-            enviados e recebidos. Antes de enviar um pacote ele criar um caminho com o recptor, que garante que a
-             mensagem nao vai se perder em algum momento e que via ser entregue inteira.  
-            A fforma que o protocolo garante essa seguranca é: <br><br /> <strong>CheckSum</strong>, para cada segmentos
-            enviado vai um código matematico gerado com base no conteudo do
-            pacote, o receptor (maquina do usuario) reaclcula esse codigo, se o valor da soma nao bater, o pacote foi
-            corropdio no
-            cvaminhos e assim tornase descartavel ---
-            mesma ideia de uma carta, caso ela tenha sido aberta, ou rasgada durante o caminho a mesma se torna
-            invalida, pois o conteudo de dentro
-            é afetado. <br><br />
-            <strong>Confirmação(ACK)</strong>, é a confrima~çao que o recptor recebeu os dados corretamente. O recptor
-            envia uma reposta
-            (<p style="font-style: italic;">Acknowledge</p>) para o emissor, informando que recebeu os dados corretamente.
-            <br><br/>
-            <strong>Retransmissão Automatica</strong>, se o receptor notar uma flaha no checksum, um pacote faltando ou se o emissor nao recebeu o ACK
-            a tempo corrido, o TCP reenvia o pacote danificado ou perdido. 
+            <h3>Como os protocolos TCP e IP funcionam?</h3>
 
-            
+            <p>
+                O protocolo TCP funciona de maneira similar a um entregador de cartas, responsável por capturar a carta,
+                caminhar até o destinatário, entregar a carta, receber a carta de novo e devolver a carta aos correios
+                com as informações do processo. É o padrão de comunicação mais utilizado no mundo e o padrão na
+                internet,
+                o mesmo define as regras de internet definidos pela IETF -
+                <span style="font-style: italic;">Internet Engineering Task Force</span>.
             </p>
+
+            <p>
+                O TCP organiza os dados para que possam ser transmitidos entre um servidor e um cliente, garantindo a
+                integridade dos pacotes a serem enviados e recebidos. Antes de enviar um pacote ele cria uma conexão com
+                o receptor, que garante que a mensagem não vai se perder em algum momento e que vai ser entregue
+                inteira.
+                A forma que o protocolo garante essa segurança é:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Checksum</strong>: para cada segmento enviado vai um código matemático gerado com base no
+                    conteúdo do pacote, o receptor (máquina do usuário) recalcula esse código, se o valor da soma não
+                    bater, o pacote foi corrompido no caminho e assim se torna descartável. Mesma ideia de uma carta,
+                    caso ela tenha sido aberta, ou rasgada durante o caminho a mesma se torna inválida, pois o conteúdo
+                    de dentro é afetado.
+                </li>
+                <br>
+                <li>
+                    <strong>Confirmação (ACK)</strong>: é a confirmação que o receptor recebeu os dados corretamente. O
+                    receptor envia uma resposta (<span style="font-style: italic;">Acknowledge</span>) para o emissor,
+                    informando que recebeu os dados corretamente.
+                </li>
+                <br>
+                <li>
+                    <strong>Retransmissão Automática</strong>: se o receptor notar uma falha no checksum, um pacote
+                    faltando ou se o emissor não recebeu o ACK a tempo corrido, o TCP reenvia o pacote danificado ou
+                    perdido.
+                </li>
+            </ul>
+
+            <div class="publi-destaque">
+                <div class="publi-cards">
+                    <img src="/static/pubs-img/checksum.jpg" alt="funcionamento-checksum">
+                    <p style="font-style: italic; font-size: 10px;">Funcionamento do checksum</p>
+
+                    <!-- ÂNCORA PARA TCP -->
+                    <span id="pub-img-tcp"></span>
+                    <img src="/static/pubs-img/fluxo-tcp.png" alt="Fluxo-do-protocolo-tcp">
+                    <p style="font-style: italic; font-size: 10px;">Fluxo do protocolo TCP</p>
+
+                    <!-- ÂNCORA PARA IP -->
+                    <span id="pub-img-ip"></span>
+                    <img src="/static/pubs-img/fluxo-ip.png" alt="Fluxo-do-protocolo-ip-redes">
+                    <p style="font-style: italic; font-size: 10px;">Fluxo do protocolo IP até o destino</p>
+                </div>
+            </div>
+
+            <h3>Interoperabilidade entre o TCP/IP e a rede</h3>
+
+            <p>
+                O TCP/IP trabalha hoje em dia com 4 camadas, são elas:
+            </p>
+
+            <ul>
+                <li>
+                    <strong style="font-style: italic;">Aplicação</strong>: responsável por estabelecer uma conexão
+                    entre
+                    um programa e a camada de transporte que está abaixo da camada de aplicação. Captura uma requisição
+                    de um programa, pois cada programa pode conversar com protocolos diferentes. Após processar essa
+                    requisição, normalmente utilizando TCP, a camada de aplicação envia os dados para a camada de baixo
+                    através do chamado <em>socket</em>. A camada manda para baixo os dados brutos (HTML, img, JSON
+                    etc.).
+                    Quando bate no socket da camada de transporte, a mesma processa esses dados e passa assim por
+                    diante.
+                    Um exemplo de um programa seria uma página/aplicação no navegador. Nessa camada existem muitos
+                    outros
+                    protocolos, como HTTP responsável pelo envio e recebimento de dados na internet entre um
+                    servidor-cliente. O DNS que traduz o nome, domínio do site correto (nome da página), para o IP
+                    público. Exemplo disso é uma aplicação com IP público 142.250.65.78, você procura Google.com na URL.
+                    SMTP para envio de email, entre outros como FTP, SNMP e Telnet (parecido com o SSH porém sem
+                    criptografia).
+                </li>
+                <br>
+                <li>
+                    <strong style="font-style: italic;">Transporte</strong>: responsável por capturar os dados que vem
+                    da
+                    camada de aplicação e transformá-los em pacotes a serem encaminhados para a camada de internet. Usam
+                    protocolos como <a href="#pub-img-tcp" title="Ver Fluxo TCP">TCP</a> e UDP.
+                </li>
+                <br>
+                <li>
+                    <strong style="font-style: italic;">Internet/Rede</strong>: responsável pelo roteamento desses
+                    pacotes que vem da camada de transporte, ele adiciona ao datagrama informações sobre o caminho que
+                    deve percorrer. Utiliza protocolos como IP que cuida do redirecionamento até a chegada do pacote no
+                    destinatário <a href="#pub-img-ip" title="Ver Fluxo IP">IP</a>, ICMP, ARP e RARP.
+                </li>
+                <br>
+                <li>
+                    <strong style="font-style: italic;">Acesso/interface a rede</strong>: responsável por enviar o
+                    datagrama que vem da camada de internet para o destinatário, cuida da parte física do fluxo de
+                    pacotes. Considerada a camada mais baixa e "bruta" do modelo TCP/IP, ela recebe encapsulado um
+                    quadro
+                    que a camada de internet manda com o <a
+                        href="https://wiki.foz.ifpr.edu.br/wiki/index.php/Datagrama_IP">datagrama IP</a>,
+                    a camada de interface/física lê isso, compila para bits/sinais físicos transformando os dados e
+                    informações em sinais elétricos, luz e sinais de rádio.
+                </li>
+            </ul>
+
+            <p>
+                Alguns anos depois surgiu o modelo OSI -
+                <span style="font-style: italic;">Open System Interconnection</span>, reconhecido por ser baseado no
+                modelo TCP/IP, tem a mesma função praticamente, serve para mesma coisa, funciona igual, porém é
+                utilizado
+                mais na parte teórica para explicar como funciona o TCP/IP detalhadamente, pois diferente do modelo
+                TCP/IP o modelo OSI possui 7 camadas. A real é que o OSI surgiu para substituir o padrão universal que
+                era o TCP/IP, porém o mesmo se tornou muito complexo e deixou de ser implementado na internet.
+                <a href="/">Saiba mais sobre o OSI</a>
+            </p>
+
+            <div class="publi-destaque">
+                <div class="publi-cards">
+                    <img src="/static/pubs-img/modelo-tcp-ip.png" alt="Modelo-de-camadas-TCP/IP-e-OSI">
+                    <img src="/static/pubs-img/datagrama-ip.png" alt="Datagrama-IP">
+                </div>
+            </div>
+
+            <p>
+                As camadas mais perto do topo como aplicação e transporte estão mais perto do usuário, enquanto as mais
+                baixas estão mais perto da transmissão de dados físicos. Cada camada tem seus próprios protocolos, e em
+                nenhuma hipótese uma camada pode utilizar protocolos de outra camada, pois cada protocolo tem sua
+                própria
+                arquitetura e fluxo de funcionamento para ser utilizado de maneira correta.
+            </p>
+
+
+            <div class="publi-references">
+                <h3>Referências</h3>
+                <ul>
+                    <li>E. FERREIRA, Rubem. Linux: Guia do Administrador do Sistema. 2ª ed. São Paulo: Novatec, 2013.
+                        ISBN 9788575221778</li>
+                    <li> TANENBAUM, Andrew S.; WETHERALL, David. Redes de Computadores. 5ª ed. São Paulo: Pearson
+                        Education do Brasil, 2011. p. 28-29, 46-47, 223, 291, 384-478.</li>
+                    <li>KUROSE, James F.; ROSS, Keith W. Redes de computadores e a internet. 6ª ed. São Paulo: Pearson
+                        Education do Brasil, 2014. ISBN 9788543014432.</li>
+                    <li>TORRES, Gabriel. Redes de Computadores Curso Completo. Rio de Janeiro: Axcel Books, 2001. ISBN
+                        9788573231441. p. 46-47, 68.</li>
+                    <li>TURBAN, Efraim; VOLONINO, Linda. Tecnologia da Informação para Gestão. 8ª ed. Porto Alegre:
+                        Bookman, 2013. p. 103-104.</li>
+                    <li><a href="https://datatracker.ietf.org/doc/html/rfc675" target="_blank">RFC 675</a> — Internet
+                        Engineering Task Force (IETF).</li>
+                    <li>WIKIPÉDIA. TCP/IP. Disponível em: https://pt.wikipedia.org/wiki/TCP/IP. Acesso em: 20 de agosto
+                        de 2026.</li>
+                </ul>
+            </div>
+
         </div>
     </div>
 
-
-
-
     <div class="footer-container">
-        <p>
-            <img src="/static/copyleft-icon.png" alt="icon-copyleft"> Myguel Henryque Dachery do Prado | HTML5/CSS3
-        </p>
+        <div class="container-about">
+            <h3>Sobre o desenvolvedor</h3>
+            <a href="http://github.com/myguel-h"><img src="/static/icons/github.png" alt="icone-github">Github -
+                myguel-h</a>
+            <a href="mailto:myguelhenry05@gmail.com"><img src="/static/icons/gmail.png" alt="icone-gmail">Gmail -
+                myguelhenry05@gmail.com</a>
+            <a href="http://lattes.cnpq.br/3171242305410582"><img src="/static/icons/lattess.png"
+                    alt="icone-lattes">Lattes - </a>
+            <a href="https://www.linkedin.com/in/myguel-henryque-1160b72a1"><img src="/static/icons/linkedin.png"
+                    alt="icone-linkedin">Linkedin - Myguel Henryque</a>
+            <a href="https://arphya.com.br/myguel_henryque.php"><img src="/static/icons/pessoal.png"
+                    alt="icone-blog">Pessoal - Myguel Henryque</a>
+        </div>
+
+        <div class="container-about">
+            <h3>Mapa do Site</h3>
+            <a href="https://arphya.com.br/">Home</a>
+            <a href="https://arphya.com.br/about.php">Sobre Arphya</a>
+            <a href="https://arphya.com.br/pages/timeline.php">Timeline</a>
+        </div>
+
+        <div>
+            <p><img src="/static/icons/copyleft.png" alt="icone-copyleft">copyleft 2026 - Myguel Henryque Dachery do
+                Prado | All lefts reserved</p>
+            <p></p>
+        </div>
     </div>
+
+</body>
 
 </html>
