@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+/* reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +11,6 @@ html,
 body {
     min-height: 100%;
     height: 100%;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -18,15 +18,6 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-color: #f4f7fb;
-    color: #111827;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
-}
-
-body, button, input, textarea, select {
-    font-family: 'Inter', sans-serif;
 }
 
 main,
@@ -38,6 +29,7 @@ main,
     flex: 1;
 }
 
+/* header principal */
 header {
     display: flex;
     align-items: center;
@@ -47,9 +39,10 @@ header {
     border-bottom: 1px solid #e0e0e0;
     font-family: 'Inter', sans-serif;
     position: relative;
-    height: 90px;
+    height: 90px; /* define uma altura fixa! */
 }
 
+/* logo + nome */
 .logo-name {
     display: flex;
     align-items: center;
@@ -71,11 +64,12 @@ header {
 
 
 
+/* A imagem não pode ultrapassar a altura do header */
 .logo-name-pages a img {
-    height: 80px;
+    height: 80px; /* altura desejada, menor que a do header */
     width: auto;
-    max-height: 100%;
-    object-fit: contain;
+    max-height: 100%; /* garante que não ultrapasse o header */
+    object-fit: contain; /* mantém proporção */
 }
 
 
@@ -96,6 +90,7 @@ header {
     margin: 0;
 }
 
+/* header actions group */
 .header-actions {
     display: flex;
     align-items: center;
@@ -138,10 +133,12 @@ border-left: 1px solid #e0e0e0;
     transition: color 0.3s ease;
 }
 
+/* efeito hover para a lista do menu -header */
 .menu li a:hover {
     color: #2563eb;
 }
 
+/* botão do ícone de usuário */
 .btn-login {
     background: none;
     border: none;
@@ -160,6 +157,7 @@ border-left: 1px solid #e0e0e0;
     transform: scale(1.05);
 }
 
+/* user info wrapper to separate profile from the rest of the header */
 .user-info {
     display: flex;
     align-items: center;
@@ -231,11 +229,13 @@ border-left: 1px solid #e0e0e0;
     background-color: rgba(255, 107, 107, 0.12);
 }
 
-.search-icon img   {
+.search-icon button img   {
+    
     width: 20px;
     height: 20px;
 }
 
+/* ======================== SIDEBAR DOWN HEADER ======================== */
 .sidebar-down-header {
     border-collapse: separate;
     border-spacing: 0;
@@ -304,6 +304,7 @@ border-left: 1px solid #e0e0e0;
     transform: translateY(-3px);
 }
 
+/* ======================== MAIN WRAPPER ======================== */
 .main-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -314,76 +315,12 @@ border-left: 1px solid #e0e0e0;
     align-items: flex-start;
 }
 
+/* ======================== CONTENT ======================== */
 .content {
     flex: 1;
 }
 
-.publication-view {
-    width: min(95%, 75vw);
-    margin: 48px auto 72px;
-    padding: 32px 36px;
-    background: #ffffff;
-    border-radius: 32px;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
-}
-
-.publication-view h1 {
-    font-size: clamp(2rem, 3vw, 3rem);
-    margin-bottom: 18px;
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-    color: #111827;
-}
-
-.publication-view p {
-    margin: 0 0 18px;
-    color: #374151;
-    font-size: 1rem;
-    line-height: 1.9;
-}
-
-.publication-view p strong {
-    color: #111827;
-}
-
-.publication-view .content {
-    margin-top: 18px;
-    padding: 24px 28px;
-    background-color: #f8fafc;
-    border-radius: 24px;
-    border: 1px solid #e5e7eb;
-    color: #334155;
-    white-space: pre-wrap;
-}
-
-.publication-view small {
-    display: inline-block;
-    margin-top: 12px;
-    color: #6b7280;
-    font-size: 0.92rem;
-}
-
-.publication-view a {
-    display: inline-flex;
-    margin-top: 26px;
-    color: #2563eb;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.publication-view a:hover {
-    color: #1d4ed8;
-    transform: translateX(-2px);
-}
-
-.publication-view a::before {
-    content: '←';
-    margin-right: 10px;
-    opacity: 0.8;
-}
-
+/* ======================== SIDEBAR LATERAL — ESTILO DASHBOARD (referência) ======================== */
 :root {
     --sidebar-accent: #6c4ef5;
     --sidebar-accent-bg: #f1edfe;
@@ -436,6 +373,7 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
+/* ======================== NAV / LISTA DE ITENS ======================== */
 
 .sidebar-actions {
     list-style: none;
@@ -586,6 +524,7 @@ border-left: 1px solid #e0e0e0;
     color: var(--sidebar-text-muted);
 }
 
+/* Ajusta o conteúdo ao lado da sidebar para a nova largura (260px) */
 @media (min-width: 1100px) {
     .sidebar-lateral + .add-publication,
     .sidebar-lateral + .profile-user,
@@ -608,6 +547,7 @@ border-left: 1px solid #e0e0e0;
     position: fixed;
     right: 3.0rem;
     bottom: 10rem;
+    /* positioned above the fixed footer */
     width: 200px;
     min-width: 180px;
     background-color: #ffffff;
@@ -657,6 +597,7 @@ border-left: 1px solid #e0e0e0;
     transform: translateY(-3px);
 }
 
+/* ======================== PROFILE USER ======================== */
 .profile-user {
     display: flex;
     align-items: center;
@@ -813,6 +754,7 @@ border-left: 1px solid #e0e0e0;
     white-space: normal;
 }
 
+/* EDIT PROFILE BUTTON */
 .data-user button {
     background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
     border: none;
@@ -948,6 +890,7 @@ border-left: 1px solid #e0e0e0;
     transition: color 0.3s ease;
 }
 
+/* efeito hover para a lista do menu -header */
 .content-text a:hover {
     color: #2563eb;
 }
@@ -956,6 +899,7 @@ border-left: 1px solid #e0e0e0;
     margin-bottom: 0;
 }
 
+/* ======================== DESCRIPTION LINUX CARD ======================== */
 .description-linux {
     flex: 0 0 320px;
     background-color: #f9f9f9;
@@ -1022,6 +966,7 @@ border-left: 1px solid #e0e0e0;
     text-align: justify;
 }
 
+/* ======================== NOTICE CONTAINER ======================== */
 .notice-container {
     flex: 1 1 100%;
     order: 3;
@@ -1097,6 +1042,7 @@ border-left: 1px solid #e0e0e0;
     text-decoration: underline;
 }
 
+/* ======================== FOOTER ======================== */
 .footer-container {
     display: flex;
     z-index: 1000;
@@ -1106,8 +1052,9 @@ border-left: 1px solid #e0e0e0;
     padding: 30px 40px;
     width: 100%;
     
+    /* ADICIONE ESTAS DUAS LINHAS ABAIXO */
     margin-top: auto; 
-    box-sizing: border-box;
+    box-sizing: border-box; /* Evita que o padding de 40px crie barra de rolagem horizontal */
 }
 
 .footer-container p {
@@ -1119,13 +1066,14 @@ border-left: 1px solid #e0e0e0;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    width: 100%;
+    width: 100%; /* Garante que o texto fique centralizado no meio da tela */
 }
 
 .footer-container img {
     width: 16px;
     height: 16px;
 }
+/* ======================== USER LIST & PUBLICATION LIST ======================== */
 
 .user-list, .publication-list, .categories-list {
     display: block;
@@ -1140,6 +1088,7 @@ border-left: 1px solid #e0e0e0;
     z-index: 1;
 }
 
+/* Ensure conf_categories uses the same max-width as add_categories category list */
 .tables .categories-list {
     width: 100%;
     max-width: 1400px;
@@ -1203,6 +1152,7 @@ border-left: 1px solid #e0e0e0;
     table-layout: fixed;
 }
 
+/* Apenas publication-list com altura fixa */
 .publication-list tbody tr {
     height: 50px !important;
     max-height: 50px !important;
@@ -1251,6 +1201,7 @@ border-left: 1px solid #e0e0e0;
     text-overflow: ellipsis !important;
 }
 
+/* Responsividade para telas menores */
 @media (max-width: 1024px) {
     .user-list table, .publication-list table, .categories-list table {
         font-size: 0.9rem;
@@ -1458,6 +1409,7 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
+/* ======================== LOGIN & REGISTER PAGES ======================== */
 .container-account {
     display: flex;
     flex-direction: column;
@@ -1488,6 +1440,7 @@ border-left: 1px solid #e0e0e0;
     letter-spacing: -0.5px;
 }
 
+/* Mensagens de erro e sucesso */
 .error {
     background-color: #fee;
     border: 1px solid #fcc;
@@ -1507,6 +1460,7 @@ border-left: 1px solid #e0e0e0;
     color: #3c3;
 }
 
+/* Formulário */
 .form-box {
     display: flex;
     flex-direction: column;
@@ -1554,6 +1508,7 @@ border-left: 1px solid #e0e0e0;
     color: #a0a0a0;
 }
 
+/* Botão de envio */
 .btn {
     padding: 14px 24px;
     background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
@@ -1585,6 +1540,7 @@ border-left: 1px solid #e0e0e0;
     transform: none;
 }
 
+/* Link para cadastro/login */
 .link-account {
     text-align: center;
     color: #7f7f7f;
@@ -1620,6 +1576,7 @@ border-left: 1px solid #e0e0e0;
     width: 100%;
 }
 
+/* Responsividade */
 @media (max-width: 480px) {
     .container-account {
         padding: 20px 12px;
@@ -1668,6 +1625,7 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
+/* ======================== PUBLICATION & ADD PUBLICATION PAGES ======================== */
 
 .add-publication {
     width: 100%;
@@ -1682,6 +1640,7 @@ border-left: 1px solid #e0e0e0;
     z-index: 10;
 }
 
+/* Center form and categories table and make them the same max width inside .add-publication */
 .add-publication .categories-list {
     width: 100%;
     max-width: 100%;
@@ -1702,6 +1661,7 @@ border-left: 1px solid #e0e0e0;
     text-decoration: none;
 }
 
+/* ======================== FORM STYLE ======================== */
 
 .add-publication form {
     background-color: #ffffff;
@@ -1820,6 +1780,7 @@ border-left: 1px solid #e0e0e0;
     padding: 8px;
 }
 
+/* ======================== BUTTON STYLES ======================== */
 
 .btn {
     padding: 14px 28px;
@@ -1848,6 +1809,7 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 4px 16px rgba(37, 99, 235, 0.14);
 }
 
+/* ======================== PUBLICATIONS CONTAINER ======================== */
 
 .pub-container {
     display: grid;
@@ -1949,6 +1911,7 @@ border-left: 1px solid #e0e0e0;
     font-weight: 600;
 }
 
+/* ======================== CREATE PUBLICATION BUTTON ======================== */
 
 .btn-publi {
     position: fixed;
@@ -1989,6 +1952,7 @@ border-left: 1px solid #e0e0e0;
     transform: translateY(-2px);
 }
 
+/* ======================== RESPONSIVE STYLES ======================== */
 
 @media (max-width: 1200px) {
     .add-publication {
@@ -2131,6 +2095,7 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
+/* ======================== TIMELINE PAGE SPECIFIC STYLES ======================== */
 
 .timeline-page {
     width: 100% !important;
@@ -2141,6 +2106,7 @@ border-left: 1px solid #e0e0e0;
     min-height: auto !important;
 }
 
+/* ======================== ABOUT PAGE MINIMAL STYLES ======================== */
 .about-page {
     max-width: 920px;
     margin: 40px auto;
@@ -2197,6 +2163,7 @@ border-left: 1px solid #e0e0e0;
     text-decoration: underline;
 }
 
+/* Splide carousel tweaks */
 .splide {
     width: 100%;
     max-width: 100%;
@@ -2284,6 +2251,7 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 18px 48px rgba(15, 15, 15, 0.12) !important;
 }
 
+/* Timeline Responsive */
 @media (max-width: 1200px) {
     .timeline-page {
         padding: 0 1.5rem !important;
@@ -2328,6 +2296,7 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
+/* ======================== RESTRICTED ACCESS PAGE ======================== */
 
 .restricted-container {
     display: flex;
@@ -2406,6 +2375,7 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
+/* ======================== TABLE DELETE BUTTONS ======================== */
 
 .user-list table th:last-child,
 .publication-list table th:last-child {
@@ -2464,6 +2434,7 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(221, 30, 30, 0.2);
 }
 
+/* Delete button styles for categories-list (same as user-list) */
 .categories-list table button,
 .categories-list table button:nth-child(1) {
     padding: 8px 16px;
@@ -2492,6 +2463,7 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 2px 8px rgba(221, 30, 30, 0.2);
 }
 
+/* ======================== TABLE COLUMN ALIGNMENT ======================== */
 
 .user-list tbody tr:hover,
 .publication-list tbody tr:hover {
@@ -2505,6 +2477,7 @@ border-left: 1px solid #e0e0e0;
     display: table-cell;
 }
 
+/* Default categories-list column widths (used where there is no Actions column) */
 .categories-list table {
     table-layout: fixed;
 }
@@ -2527,6 +2500,7 @@ border-left: 1px solid #e0e0e0;
     min-width: calc(60% + 50px);
 }
 
+/* Admin variant: tables that include an Actions column */
 .categories-list.with-actions table {
     table-layout: fixed;
 }
@@ -2553,6 +2527,7 @@ border-left: 1px solid #e0e0e0;
     max-width: 15%;
 }
 
+/* ======================== EDIT USER PAGE ======================== */
 
 .update-user {
     display: flex;
@@ -2561,7 +2536,7 @@ border-left: 1px solid #e0e0e0;
     min-height: calc(100vh - 300px);
     padding: 32px 20px;
     font-family: 'Inter', sans-serif;
-    padding-right: 250px;
+    padding-right: 250px; /* compensa a sidebar fixa, igual .profile-user */
 }
 
 .update-user-card {
@@ -2578,6 +2553,7 @@ border-left: 1px solid #e0e0e0;
     animation: slideIn 0.4s ease-out;
 }
 
+/* ---- coluna esquerda: avatar + upload ---- */
 .update-user-avatar {
     grid-column: 1 / 2;
     display: flex;
@@ -2594,6 +2570,7 @@ border-left: 1px solid #e0e0e0;
     width: 100%;
 }
 
+/* esconde o input file nativo e usa uma label estilizada no lugar */
 .update-user-avatar input[type="file"] {
     display: none;
 }
@@ -2638,6 +2615,7 @@ border-left: 1px solid #e0e0e0;
     font-size: 0.92rem;
 }
 
+/* ---- coluna direita: dados do formulário ---- */
 .update-user-fields {
     grid-column: 2 / 3;
 }
@@ -2648,6 +2626,7 @@ border-left: 1px solid #e0e0e0;
     gap: 18px;
 }
 
+/* reaproveita o padrão de .insert-publication label/input/select */
 .update-user-fields label {
     font-weight: 600;
     color: #1a1a1a;
@@ -2691,8 +2670,9 @@ border-left: 1px solid #e0e0e0;
     color: #a8a8a8;
 }
 
+/* Aumenta a área do campo "Sobre você" para ocupar espaço abaixo quando disponível */
 .update-user-fields textarea {
-    min-height: 220px;
+    min-height: 220px; /* ocupa a parte debaixo reservada */
     resize: vertical;
 }
 
@@ -2736,6 +2716,7 @@ border-left: 1px solid #e0e0e0;
     box-shadow: 0 4px 16px rgba(37, 99, 235, 0.14);
 }
 
+/* ---- responsividade, mesmo padrão do .data-user ---- */
 @media (max-width: 768px) {
     .update-user {
         min-height: auto;
@@ -2771,12 +2752,14 @@ border-left: 1px solid #e0e0e0;
     }
 }
 
+/* corrige o padding-right da sidebar em telas menores que 1100px, quando ela deixa de ser fixa */
 @media (max-width: 1100px) {
     .update-user {
         padding-right: 20px;
     }
 }
 
+/* ======================== RETURN PAGE SEARCH STYLE ======================== */
 
 body {
     background-color: #f4f4f5;
@@ -2870,6 +2853,7 @@ body {
     }
 }
 
+/* Carrossel - altura 60px, largura 100% */
 .splide {
     width: 100%;
     max-width: 100%;
@@ -2900,6 +2884,7 @@ body {
     transform: scale(1.1);
 }
 
+/* Paginação */
 .splide__pagination {
     bottom: -10px;
 }
@@ -2954,4 +2939,290 @@ body {
   height: 3px;
   background: linear-gradient(90deg, #ff6b6b, #ff8e8e);
   border-radius: 2px;
+}
+
+:root {
+    --article-max-width: 1050px;
+    --article-radius: 20px;
+    --article-border: #e6e6e6;
+    --article-text: #374151;
+    --article-heading: #111827;
+    --article-muted: #6b7280;
+    --article-accent: #2563eb;
+    --article-accent-soft: #eff6ff;
+    --article-bg-card: #ffffff;
+}
+
+.sumary {
+    background-color: var(--article-bg-card);
+    border: 1px solid var(--article-border);
+    border-radius: var(--article-radius);
+    padding: 28px 24px;
+    margin: 40px auto 0;
+    width: min(92%, 1450px);
+    box-shadow: 0 20px 48px rgba(15, 23, 42, 0.06);
+    font-family: 'Inter', sans-serif;
+}
+
+.sumary h3 {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--article-muted);
+    margin-bottom: 16px;
+}
+
+.sumary ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.sumary li {
+    margin: 0;
+}
+
+.sumary a {
+    text-decoration: none;
+    color: var(--article-text);
+    font-weight: 500;
+    font-size: 0.92rem;
+    padding: 6px 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.sumary a:hover {
+    color: var(--article-accent);
+    border-color: var(--article-accent);
+}
+
+.publi-content {
+    width: min(92%, 1450px);
+    margin: 40px auto 100px;
+}
+
+.publi-content > h2 {
+    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--article-heading);
+    margin-bottom: 28px;
+    max-width: var(--article-max-width);
+}
+
+.publi-content .content {
+    max-width: var(--article-max-width);
+}
+
+.publi-content .content h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--article-heading);
+    margin: 40px 0 16px;
+    line-height: 1.35;
+}
+
+.publi-content .content h3:first-child {
+    margin-top: 0;
+}
+
+.publi-content .content p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--article-text);
+    margin-bottom: 22px;
+}
+
+.publi-content .content p strong {
+    color: var(--article-heading);
+    font-weight: 700;
+}
+
+.publi-content .content a {
+    color: var(--article-accent);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.publi-content .content a:hover {
+    border-color: var(--article-accent);
+}
+
+.publi-content .content ul {
+    margin: 0 0 24px;
+    padding-left: 20px;
+}
+
+.publi-content .content ul li {
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--article-text);
+    margin-bottom: 4px;
+}
+
+.publi-content .content ul li strong {
+    color: var(--article-heading);
+}
+
+.publi-destaque {
+    margin: 32px 0;
+    padding: 24px;
+    background-color: #f9fafb;
+    border: 1px solid var(--article-border);
+    border-radius: 18px;
+    text-align: center;
+}
+
+.publi-destaque img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.publi-destaque p {
+    margin-top: 12px;
+    margin-bottom: 0 !important;
+    font-size: 0.85rem;
+    color: var(--article-muted);
+}
+
+.publi-cards {
+    display: grid;
+    gap: 24px;
+    justify-content: center;
+    align-items: start;
+}
+
+.publi-cards:has(p) {
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    grid-auto-columns: minmax(220px, 1fr);
+}
+
+.publi-cards:not(:has(p)) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.publi-cards span {
+    position: absolute;
+}
+
+.publi-cards img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    justify-self: center;
+}
+
+.publi-cards p {
+    margin: 0;
+    text-align: center;
+}
+.publi-references {
+    margin-top: 48px;
+    padding: 28px 32px;
+    background-color: #f9fafb;
+    border: 1px solid var(--article-border);
+    border-radius: 18px;
+}
+
+.publi-references h3 {
+    margin-top: 0 !important;
+}
+
+.publi-references ul {
+    padding-left: 20px;
+    margin-bottom: 0 !important;
+}
+
+.publi-references li {
+    font-size: 0.92rem;
+    color: var(--article-muted);
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.publi-references li:last-child {
+    margin-bottom: 0;
+}
+
+.publi-references a {
+    color: var(--article-accent);
+}
+
+@media (min-width: 1100px) {
+    .sumary {
+        position: absolute;
+        top: 110px;
+        left: 2vw;
+        width: 260px;
+        margin: 0;
+        z-index: 5;
+    }
+
+    .publi-content {
+        margin-left: calc(260px + 4vw);
+        width: calc(min(92%, 1450px) - (260px + 4vw));
+    }
+}
+
+@media (max-width: 1099px) {
+    .sumary,
+    .publi-content {
+        width: min(94%, 1200px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .sumary {
+        padding: 20px 18px;
+    }
+
+    .sumary ul {
+        gap: 8px 16px;
+    }
+
+    .publi-content > h2 {
+        font-size: 1.7rem;
+    }
+
+    .publi-content .content h3 {
+        font-size: 1.2rem;
+    }
+
+    .publi-content .content p,
+    .publi-content .content ul li {
+        font-size: 1rem;
+    }
+
+    .publi-destaque,
+    .publi-references {
+        padding: 20px;
+    }
+
+    .publi-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .sumary {
+        margin-top: 24px;
+    }
+
+    .publi-content {
+        margin-top: 24px;
+        margin-bottom: 60px;
+    }
 }

@@ -81,13 +81,16 @@ if ($user_id > 0) {
             <li><a href="#secao1">Historia do TCP/IP</a></li>
             <li><a href="#secao2">Desenvolvimento do TCP/IP</a></li>
              <li><a href="#secao3">Funcionamento do TCP e IP</a></li>
-            <li><a href="secao1">Historia do TCP/IP</a></li>
-            <li><a href="secao1">Historia do TCP/IP</a></li>
+            <li><a href="#secao4">Fluxo dos protocolos TCP e IP</a></li>
+            <li><a href="#secao5">Interoperabilidade sobre TCP/IP</a></li>
+            <li><a href="#secao6">Modelo OSI e datagrama IP</a></li>
+            <li><a href="#secao7">Referências</a></li>
+
 
         </ul>
     </nav>
 
-    <div class="publis-content">
+    <div class="publi-content">
         <h2 id="secao1">Protocolo TCP/IP</h2>
 
         <div class="content">
@@ -201,7 +204,7 @@ if ($user_id > 0) {
             </p>
 
             <div class="publi-destaque">
-                <img src="/static/pubs-img/vicent_e_robert.jpg" alt="Foto_de_Vicent_e_Robert">
+                <img src="/static/pubs-img/vint-e-robert.jpg" alt="Foto_de_Vint_e_Robert">
                 <p style="font-style: italic; font-size: 10px;">Criador do modelo TCP/IP, Robert Kahn (esquerda) e Vint
                     Cerf (Direita)</p>
             </div>
@@ -247,22 +250,23 @@ if ($user_id > 0) {
                 </li>
             </ul>
 
-            <div class="publi-destaque">
+            <div id="secao4" class="publi-destaque">
                 <div class="publi-cards">
                     <img src="/static/pubs-img/checksum.jpg" alt="funcionamento-checksum">
                     <p style="font-style: italic; font-size: 10px;">Funcionamento do checksum</p>
+
+                    <span id="pub-img-ip"></span>
+                    <img src="/static/pubs-img/fluxo-ip.png" alt="Fluxo-do-protocolo-ip-redes">
+                    <p style="font-style: italic; font-size: 10px;">Fluxo do protocolo IP até o destino</p>
 
                     <span id="pub-img-tcp"></span>
                     <img src="/static/pubs-img/fluxo-tcp.png" alt="Fluxo-do-protocolo-tcp">
                     <p style="font-style: italic; font-size: 10px;">Fluxo do protocolo TCP</p>
 
-                    <span id="pub-img-ip"></span>
-                    <img src="/static/pubs-img/fluxo-ip.png" alt="Fluxo-do-protocolo-ip-redes">
-                    <p style="font-style: italic; font-size: 10px;">Fluxo do protocolo IP até o destino</p>
                 </div>
             </div>
 
-            <h3>Interoperabilidade entre o TCP/IP e a rede</h3>
+            <h3 id="secao5">Interoperabilidade entre o TCP/IP e a rede</h3>
 
             <p>
                 O TCP/IP trabalha hoje em dia com 4 camadas, são elas:
@@ -325,7 +329,7 @@ if ($user_id > 0) {
                 <a href="/">Saiba mais sobre o OSI</a>
             </p>
 
-            <div class="publi-destaque">
+            <div id="secao6" class="publi-destaque">
                 <div class="publi-cards">
                     <img src="/static/pubs-img/modelo-tcp-ip.png" alt="Modelo-de-camadas-TCP/IP-e-OSI">
                     <img src="/static/pubs-img/datagrama-ip.png" alt="Datagrama-IP">
@@ -341,7 +345,7 @@ if ($user_id > 0) {
             </p>
 
 
-            <div class="publi-references">
+            <div id="secao7" class="publi-references">
                 <h3>Referências</h3>
                 <ul>
                     <li>E. FERREIRA, Rubem. Linux: Guia do Administrador do Sistema. 2ª ed. São Paulo: Novatec, 2013.
@@ -371,8 +375,8 @@ if ($user_id > 0) {
                 myguel-h</a>
             <a href="mailto:myguelhenry05@gmail.com"><img src="/static/icons/gmail.png" alt="icone-gmail">Gmail -
                 myguelhenry05@gmail.com</a>
-            <a href="http://lattes.cnpq.br/3171242305410582"><img src="/static/icons/lattess.png"
-                    alt="icone-lattes">Lattes - </a>
+            <a href="http://lattes.cnpq.br/3171242305410582"><img src="/static/icons/lattes.png"
+                    alt="icone-lattes">Lattes - Myguel</a>
             <a href="https://www.linkedin.com/in/myguel-henryque-1160b72a1"><img src="/static/icons/linkedin.png"
                     alt="icone-linkedin">Linkedin - Myguel Henryque</a>
             <a href="https://arphya.com.br/myguel_henryque.php"><img src="/static/icons/pessoal.png"
@@ -387,8 +391,7 @@ if ($user_id > 0) {
         </div>
 
         <div>
-            <p><img src="/static/icons/copyleft.png" alt="icone-copyleft">copyleft 2026 - Myguel Henryque Dachery do
-                Prado | All lefts reserved</p>
+            <p><img src="/static/copyleft-icon.png" alt="icone-copyleft">copyleft 2026 - Myguel Henryque | All lefts reserved</p>
             <p></p>
         </div>
     </div>
