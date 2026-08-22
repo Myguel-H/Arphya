@@ -80,7 +80,7 @@ if ($user_id > 0) {
         <ul>
             <li><a href="#secao1">Historia do TCP/IP</a></li>
             <li><a href="#secao2">Desenvolvimento do TCP/IP</a></li>
-             <li><a href="#secao3">Funcionamento do TCP e IP</a></li>
+            <li><a href="#secao3">Funcionamento do TCP e IP</a></li>
             <li><a href="#secao4">Fluxo dos protocolos TCP e IP</a></li>
             <li><a href="#secao5">Interoperabilidade sobre TCP/IP</a></li>
             <li><a href="#secao6">Modelo OSI e datagrama IP</a></li>
@@ -100,17 +100,18 @@ if ($user_id > 0) {
                 Historicamente, entendendo um pouco, tudo começou alguns anos depois do início da Guerra Fria
                 (1947–1991). Por volta da década de 1950, foi criado um órgão de pesquisa pelo Departamento de
                 Defesa dos E.U.A., chamado de ARPA, hoje conhecido como
-                <a title="Saber mais sobre o DARPA" href="/">DARPA</a>
-                (Defense Advanced Research Projects Agency). Uma agência americana que visava inicialmente ao
+                <a title="Saber mais sobre o DARPA"
+                    href="https://pt.wikipedia.org/wiki/Ag%C3%AAncia_de_Projetos_de_Pesquisa_Avan%C3%A7ada_de_Defesa">DARPA</a>
+                - Defense Advanced Research Projects Agency. Uma agência americana que visava inicialmente ao
                 desenvolvimento de projetos e tecnologias avançadas para a área militar.
             </p>
 
             <p>
-                Essa mesma agência, no final dos anos 1960, criou um projeto chamado
-                <a href="/">ARPANET</a>
-                (<span style="font-style: italic;">Advanced Research Projects Agency Network</span>),
-                que era responsável pelo desenvolvimento de uma nova tecnologia que idealizava maior segurança
-                e menores riscos na comunicação, principalmente por meio da descentralização da comunicação.
+                Esse mesmo orgão, no final dos anos 1960, criou um projeto chamado
+                <a href="https://pt.wikipedia.org/wiki/ARPANET">ARPANET</a>
+                - <span style="font-style: italic;">Advanced Research Projects Agency Network</span>,
+                que era responsável pelo desenvolvimento de novas tecnologias que idealizavam maior segurança
+                e menos riscos na comunicação militar, principalmente por meio da descentralização da comunicação.
                 Na época em que surgiu, a Guerra Fria estava em seu auge, o que possibilitou avanços tecnológicos
                 que, posteriormente, seriam considerados futuristas.
             </p>
@@ -118,55 +119,62 @@ if ($user_id > 0) {
             <p>
                 Já nessa mesma época, mais especificamente em 1979, a ARPANET e o governo militar se depararam
                 com um problema relacionado aos limites de comunicação entre os computadores. Naquela época,
-                era utilizado, como padrão, o <a title="Saber mais sobre NCP" href="/">NCP</a>
-                (<span style="font-style: italic;">Network Control Protocol</span>),
-                um dos primeiros protocolos de rede para comunicação entre computadores que funcionava a longa
+                era utilizado, como padrão, o <a title="Saber mais sobre NCP"
+                    href="https://www.geeksforgeeks.org/computer-networks/network-control-protocol-ncp/">NCP</a>
+                - <span style="font-style: italic;">Network Control Protocol</span>,
+                o primeiro protocolo de rede para comunicação entre computadores que funcionava a longa
                 distância (ponta a ponta).
             </p>
 
             <p>
                 O NCP era "revolucionário" para a época, pois as máquinas já podiam se comunicar a longas
-                distâncias. Porém, existiam muitos limites. Alguns deles eram: funcionava apenas dentro de uma rede
+                distâncias, com altas chanches de entrega do pacote. Porém, existiam muitos limites.
+                Alguns deles eram: funcionava apenas dentro de uma rede
                 "interna",
                 não era aberta ao público e apenas computadores específicos podiam se comunicar.
                 Além disso, softwares diferentes muitas vezes não conseguiam se comunicar entre si e dependiam
                 de hardwares muito específicos para transmitir as mensagens, como os IMPs
-                (<span style="font-style: italic;">Interface Message Processor</span>), entre outros.
+                - <span style="font-style: italic;">Interface Message Processor</span>, entre outros.
             </p>
 
             <p>
-                Assim, com as limitações do antigo NCP, surgiu o modelo atual e mais importante para a comunicação
+                Assim, com as limitações do NCP, surgiu o modelo atual e mais importante para a comunicação
                 na Internet: o TCP/IP, que hoje é utilizado como base para a comunicação na Internet e substituiu
-                o NCP. O TCP/IP foi desenvolvido na mesma época de criação do DARPA e teve seu desenvolvimento
-                impulsionado pela própria agência. Como era comum utilizar o NCP, o TCP/IP ainda não era uma opção
-                imediata para substituição do protocolo.
+                o NCP. Como era comum utilizar o NCP, o TCP/IP ainda não era uma opção imediata para substituição do
+                protocolo.
             </p>
 
-            <h3 id="secao2" >Surgimento do modelo TCP/IP</h3>
+            <h3 id="secao2">Surgimento do modelo TCP/IP</h3>
 
             <p>
-                O TCP/IP teve seus primeiros passos em 1969 pelo DARPA, e era apenas um complemento/recurso do projeto
-                ARPANET.
+                Originalmente não havia TCP nem IP, os dois foram sendo arquitetados durante os anos de 1973 e 1974 onde
+                a DARPA financiava o estudo e desenvolvimento dessas tecnologias e protocolos, com seus cientistas
+                chefes
+                Vint Cerf e Robert Kahn. O TCP/IP teve seus primeiros passos em 1969 pelo DARPA, e era apenas um
+                complemento/recurso do projeto ARPANET.
                 Hoje em dia muitos entendem e veem ele como um protocolo, não está errado! Porém ele mais é um modelo do
                 que um protocolo por si só, pois ele utiliza dois protocolos: TCP -
                 <span style="font-style: italic;">Protocol Comunication Transport</span>
                 e IP - <span style="font-style: italic;">Protocol Internet</span>, assim surgindo da junção desses
-                dois protocolos o que conhecemos hoje como TCP/IP. Ele foi arquitetado com uma maneira genial chamada de
-                <a href="/">packet switching</a>
-                (<span style="font-style: italic;">comutação de pacotes</span>) que seguia um passo simples:
+                dois protocolos o que conhecemos hoje como TCP/IP. O TCP/IP foi arquitetado utilizando um método muito
+                conhecido
+                como <a href="/">packet switching</a>
+                - <span style="font-style: italic;">comutação de pacotes</span>, que seguia um passo simples:
                 enviava um pacote individualmente pela rede, assim se caso um pacote for "destruído" ele seguiria
-                com outras rotas, assim também buscando a rota mais rápida até o destinatário.
+                com outras rotas, também buscando o caminho mais rápido até o destinatário.
                 <strong>Curiosidade</strong>:
                 O objetivo principal surgiu do temor de acontecer uma guerra nuclear, então assim os cientistas
-                procuravam um método que mesmo em caso de guerra, com a queda da comunicação eles conseguissem se
-                comunicar.
+                procuravam um método que mesmo em caso de guerra, com um ataque e a queda da comunicação ainda sim
+                continuasse
+                funcionando.
             </p>
 
             <p>
-                Alguns anos depois do surgimento do modelo ele se tornou conhecido entre a comunidade, em 1972 já era
-                conhecido mundialmente. Em 1974 houve a 'primeira' apresentação oficial sobre o modelo TCP/IP escrito
-                por
-                Vint Cerf e Robert Kahn, apresentando que o conceito do modelo TCP/IP demonstrou que ele poderia
+                Alguns anos depois do surgimento do modelo ele se tornou conhecido entre a comunidade, em 1973 quando
+                ainda estava
+                sendo projetado e desenhado, já era conhecido mundialmente. Em 1974 houve a 'primeira' apresentação
+                oficial sobre o modelo TCP/IP escrito
+                por Vint Cerf e Robert Kahn, apresentando que o conceito do modelo TCP/IP demonstrou que poderia
                 funcionar em diferentes redes e suportar múltiplas interconexões, algo muito superior para as
                 arquiteturas e modelos da época.
             </p>
@@ -180,14 +188,12 @@ if ($user_id > 0) {
             </div>
 
             <p>
-                Originalmente não havia TCP nem IP, os dois foram sendo arquitetados durante os anos de 1969 e 1974
-                onde a DARPA financiava o estudo e desenvolvimento dessas tecnologias e protocolos, com seus cientistas
-                chefes Vint Cerf e Robert Kahn. Eles trabalhavam em conjunto com o grupo internacional de pesquisa e
-                desenvolvimento da internet INWG -
+                Desde 1973 a Darpa, Vint Cerf e Robert Kahn submeteram um grande esforço junto do grupo internacional de
+                pesquisa e desenvolvimento da internet INWG -
                 <span style="font-style: italic;">International Network Working Group</span> aos quais colaboravam com
                 ideias
                 e desenhos de arquitetura para o desenvolvimento do TCP/IP. Na época, eles tinham quase tudo pronto:
-                o modelo, desenhos, ideias e dinheiro para criar. Então em 1972 a DARPA contratou a BBN Technologies,
+                o modelo, desenhos, ideias e dinheiro para criar. Então em 1975 a DARPA contratou a BBN Technologies,
                 a Universidade de Stanford e a Universidade de College London para aplicar tudo isso em hardware.
                 Assim foram desenvolvidas algumas versões operacionais do protocolo em diversas plataformas.
                 Quatro versões foram desenvolvidas durante 7 anos com diferentes versões, sendo elas TCP v1, TCP v2,
@@ -204,19 +210,19 @@ if ($user_id > 0) {
             </p>
 
             <div class="publi-destaque">
-                <img src="/static/pubs-img/vint-e-robert.jpg" alt="Foto_de_Vint_e_Robert">
-                <p style="font-style: italic; font-size: 10px;">Criador do modelo TCP/IP, Robert Kahn (esquerda) e Vint
-                    Cerf (Direita)</p>
+                <img style="max-width: 600px ;" src="/static/pubs-img/vint-e-robert.jpg" alt="Foto_de_Vint_e_Robert">
+                <p style="font-style: italic; font-size: 10px;">Principais criadores do modelo TCP/IP, Robert Kahn
+                    (esquerda) e Vint
+                    Cerf (direita)</p>
             </div>
 
-            <h3 id="secao3" >Como os protocolos TCP e IP funcionam?</h3>
+            <h3 id="secao3">Como os protocolos TCP e IP funcionam?</h3>
 
             <p>
-                O protocolo TCP funciona de maneira similar a um entregador de cartas, responsável por capturar a carta,
+                O protocolo TCP trabalha de maneira similar a um entregador de cartas, responsável por capturar a carta,
                 caminhar até o destinatário, entregar a carta, receber a carta de novo e devolver a carta aos correios
-                com as informações do processo. É o padrão de comunicação mais utilizado no mundo e o padrão na
-                internet,
-                o mesmo define as regras de internet definidos pela IETF -
+                com as informações do processo. É o padrão de comunicação mais utilizado no mundo,
+                o mesmo tem possui regras de internet definidos pela IETF -
                 <span style="font-style: italic;">Internet Engineering Task Force</span>.
             </p>
 
@@ -224,8 +230,7 @@ if ($user_id > 0) {
                 O TCP organiza os dados para que possam ser transmitidos entre um servidor e um cliente, garantindo a
                 integridade dos pacotes a serem enviados e recebidos. Antes de enviar um pacote ele cria uma conexão com
                 o receptor, que garante que a mensagem não vai se perder em algum momento e que vai ser entregue
-                inteira.
-                A forma que o protocolo garante essa segurança é:
+                inteira. O conjunto de formas que o protocolo garante essa segurança é:
             </p>
 
             <ul>
@@ -251,8 +256,9 @@ if ($user_id > 0) {
             </ul>
 
             <div id="secao4" class="publi-destaque">
+                <p style="font-style: italic; font-size: 15px; padding-bottom: 15px; color: red;">Abra a imagem em outra página, caso queria ver melhor </p>
                 <div class="publi-cards">
-                    <img src="/static/pubs-img/checksum.jpg" alt="funcionamento-checksum">
+                    <img src="/static/pubs-img/checksum.png" alt="funcionamento-checksum">
                     <p style="font-style: italic; font-size: 10px;">Funcionamento do checksum</p>
 
                     <span id="pub-img-ip"></span>
@@ -269,7 +275,7 @@ if ($user_id > 0) {
             <h3 id="secao5">Interoperabilidade entre o TCP/IP e a rede</h3>
 
             <p>
-                O TCP/IP trabalha hoje em dia com 4 camadas, são elas:
+                O TCP/IP trabalha com 4 camadas, são elas:
             </p>
 
             <ul>
@@ -288,9 +294,16 @@ if ($user_id > 0) {
                     protocolos, como HTTP responsável pelo envio e recebimento de dados na internet entre um
                     servidor-cliente. O DNS que traduz o nome, domínio do site correto (nome da página), para o IP
                     público. Exemplo disso é uma aplicação com IP público 142.250.65.78, você procura Google.com na URL.
-                    SMTP para envio de email, entre outros como FTP, SNMP e Telnet (parecido com o SSH porém sem
+                    SMTP para envio de email, entre outros como FTP, SNMP e Telnet (semelhante com o SSH porém sem
                     criptografia).
                 </li>
+
+                <div id="secao6" class="publi-destaque">
+                    <div class="publi-cards">
+                        <img style="max-width: 580px;"  src="/static/pubs-img/modelo-socket.png" alt="Modelo-socket-entre-camadas">
+                    </div>
+                </div>
+
                 <br>
                 <li>
                     <strong style="font-style: italic;">Transporte</strong>: responsável por capturar os dados que vem
@@ -326,15 +339,17 @@ if ($user_id > 0) {
                 mais na parte teórica para explicar como funciona o TCP/IP detalhadamente, pois diferente do modelo
                 TCP/IP o modelo OSI possui 7 camadas. A real é que o OSI surgiu para substituir o padrão universal que
                 era o TCP/IP, porém o mesmo se tornou muito complexo e deixou de ser implementado na internet.
-                <a href="/">Saiba mais sobre o OSI</a>
+                <a href="https://aws.amazon.com/pt/what-is/osi-model/">Saiba mais sobre o OSI</a>
             </p>
 
             <div id="secao6" class="publi-destaque">
                 <div class="publi-cards">
-                    <img src="/static/pubs-img/modelo-tcp-ip.png" alt="Modelo-de-camadas-TCP/IP-e-OSI">
+                    <img src="/static/pubs-img/modelo-tcp-ip-osi.png" alt="Modelo-de-camadas-TCP/IP-e-OSI">
                     <img src="/static/pubs-img/datagrama-ip.png" alt="Datagrama-IP">
                 </div>
             </div>
+
+            <p style="style-font: italic;">Fonte: <a href="https://www.vivaolinux.com.br/artigo/Datagramas/">Protocolo IP e datagrama</a></p>
 
             <p>
                 As camadas mais perto do topo como aplicação e transporte estão mais perto do usuário, enquanto as mais
@@ -391,7 +406,8 @@ if ($user_id > 0) {
         </div>
 
         <div>
-            <p><img src="/static/copyleft-icon.png" alt="icone-copyleft">copyleft 2026 - Myguel Henryque | All lefts reserved</p>
+            <p><img src="/static/copyleft-icon.png" alt="icone-copyleft">copyleft 2026 - Myguel Henryque | All lefts
+                reserved</p>
             <p></p>
         </div>
     </div>
