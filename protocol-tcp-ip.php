@@ -210,7 +210,7 @@ if ($user_id > 0) {
             </p>
 
             <div class="publi-destaque">
-                <img src="/static/pubs-img/vint-e-robert.jpg" alt="Foto_de_Vint_e_Robert">
+                <img style="max-width: 600px ;" src="/static/pubs-img/vint-e-robert.jpg" alt="Foto_de_Vint_e_Robert">
                 <p style="font-style: italic; font-size: 10px;">Principais criadores do modelo TCP/IP, Robert Kahn
                     (esquerda) e Vint
                     Cerf (direita)</p>
@@ -256,6 +256,7 @@ if ($user_id > 0) {
             </ul>
 
             <div id="secao4" class="publi-destaque">
+                <p style="font-style: italic; font-size: 15px; padding-bottom: 15px; color: red;">Abra a imagem em outra página, caso queria ver melhor </p>
                 <div class="publi-cards">
                     <img src="/static/pubs-img/checksum.png" alt="funcionamento-checksum">
                     <p style="font-style: italic; font-size: 10px;">Funcionamento do checksum</p>
@@ -299,7 +300,7 @@ if ($user_id > 0) {
 
                 <div id="secao6" class="publi-destaque">
                     <div class="publi-cards">
-                        <img src="/static/pubs-img/modelo-socket.png" alt="Modelo-socket-entre-camadas">
+                        <img style="max-width: 580px;"  src="/static/pubs-img/modelo-socket.png" alt="Modelo-socket-entre-camadas">
                     </div>
                 </div>
 
@@ -347,6 +348,8 @@ if ($user_id > 0) {
                     <img src="/static/pubs-img/datagrama-ip.png" alt="Datagrama-IP">
                 </div>
             </div>
+
+            <p style="style-font: italic;">Fonte: <a href="https://www.vivaolinux.com.br/artigo/Datagramas/">Protocolo IP e datagrama</a></p>
 
             <p>
                 As camadas mais perto do topo como aplicação e transporte estão mais perto do usuário, enquanto as mais
